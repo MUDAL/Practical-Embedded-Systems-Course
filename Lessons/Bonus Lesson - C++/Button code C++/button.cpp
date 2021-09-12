@@ -24,9 +24,9 @@ bool Button::IsDebounced(void)
 
 Button::Button(ButtonID buttonID)
 {
-	id = buttonID;
-	if(id < NUMBER_OF_BUTTONS)
+	if(buttonID < NUMBER_OF_BUTTONS)
 	{
+		id = buttonID;
 		prevPressed = false;
 		GPIO_InitStructArray[id].Pin = GPIO_Pinx[id];
 		GPIO_InitStructArray[id].Mode = GPIO_MODE_INPUT;

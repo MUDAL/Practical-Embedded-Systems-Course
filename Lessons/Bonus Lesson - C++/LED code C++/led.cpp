@@ -10,9 +10,9 @@ namespace
 
 LED::LED(LED_ID ledID)
 {
-	id = ledID;
-	if(id < NUMBER_OF_LEDS)
+	if(ledID < NUMBER_OF_LEDS)
 	{
+		id = ledID;
 		GPIO_InitStructArray[id].Pin = GPIO_Pinx[id];
 		GPIO_InitStructArray[id].Mode = GPIO_MODE_OUTPUT_PP;
 		HAL_GPIO_Init(GPIO_Portx[id],&GPIO_InitStructArray[id]);
