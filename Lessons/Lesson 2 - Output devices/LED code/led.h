@@ -3,20 +3,20 @@
 
 #define NUMBER_OF_LEDS	3
 
-typedef enum
+enum LEDPin
 {
-	LED1 = 0,
-	LED2,
-	LED3
-}LED_ID;
+	LED_PA5 = 0,
+	LED_PC5,
+	LED_PC6
+};
 
-typedef enum
+typedef enum 
 {
 	LED_OFF = 0,
 	LED_ON
 }LED_State;
 
-extern void LED_Init(uint8_t numberOfLeds);
-extern void LED_Write(LED_ID LedID,LED_State LedState);
+extern void LED_Init(uint8_t pinNumber);
+extern void LED_Write(uint8_t pinNumber,LED_State LedState);
 
 #endif //LED_H

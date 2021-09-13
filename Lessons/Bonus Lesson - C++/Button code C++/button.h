@@ -3,22 +3,22 @@
 
 #define NUMBER_OF_BUTTONS		3
 
-typedef enum
+enum ButtonPin
 {
-	BUTTON1 = 0,
-	BUTTON2,
-	BUTTON3
-}ButtonID;
+	BUTTON_PC0 = 0,
+	BUTTON_PC1,
+	BUTTON_PC13
+};
 
 class Button
 {
 	private:
-		ButtonID id;
+		uint8_t pin;
 		bool prevPressed;
 		bool IsDebounced(void);
 	
 	public:
-		Button(ButtonID buttonID);
+		Button(uint8_t pinNumber);
 		bool Pressed(void);
 };
 

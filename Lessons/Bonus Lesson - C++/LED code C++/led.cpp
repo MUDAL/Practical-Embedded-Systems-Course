@@ -8,28 +8,28 @@ namespace
 	uint16_t GPIO_Pinx[NUMBER_OF_LEDS] = {GPIO_PIN_5,GPIO_PIN_5,GPIO_PIN_6};	
 };
 
-LED::LED(LED_ID ledID)
+LED::LED(uint8_t pinNumber)
 {
-	if(ledID < NUMBER_OF_LEDS)
+	if(pinNumber < NUMBER_OF_LEDS)
 	{
-		id = ledID;
-		GPIO_InitStructArray[id].Pin = GPIO_Pinx[id];
-		GPIO_InitStructArray[id].Mode = GPIO_MODE_OUTPUT_PP;
-		HAL_GPIO_Init(GPIO_Portx[id],&GPIO_InitStructArray[id]);
+		pin = pinNumber;
+		GPIO_InitStructArray[pinNumber].Pin = GPIO_Pinx[pinNumber];
+		GPIO_InitStructArray[pinNumber].Mode = GPIO_MODE_OUTPUT_PP;
+		HAL_GPIO_Init(GPIO_Portx[pinNumber],&GPIO_InitStructArray[pinNumber]);
 	}
 }
 
 void LED::TurnOn(void)
 {
-	HAL_GPIO_WritePin(GPIO_Portx[id],GPIO_Pinx[id],GPIO_PIN_SET);	
+	HAL_GPIO_WritePin(GPIO_Portx[pin],GPIO_Pinx[pin],GPIO_PIN_SET);	
 }
 
 void LED::TurnOff(void)
 {
-	HAL_GPIO_WritePin(GPIO_Portx[id],GPIO_Pinx[id],GPIO_PIN_RESET);	
+	HAL_GPIO_WritePin(GPIO_Portx[pin],GPIO_Pinx[pin],GPIO_PIN_RESET);	
 }
 
 void LED::Toggle(void)
 {
-	HAL_GPIO_TogglePin(GPIO_Portx[id],GPIO_Pinx[id]);
+	HAL_GPIO_TogglePin(GPIO_Portx[pin],GPIO_Pinx[pin]);
 }

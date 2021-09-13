@@ -5,17 +5,17 @@ static GPIO_InitTypeDef GPIO_InitStructArray[NUMBER_OF_LEDS];
 static GPIO_TypeDef* GPIO_Portx[NUMBER_OF_LEDS] = {GPIOA,GPIOC,GPIOC};
 static uint16_t GPIO_Pinx[NUMBER_OF_LEDS] = {GPIO_PIN_5,GPIO_PIN_5,GPIO_PIN_6};
 
-void LED_Init(uint8_t numberOfLeds)
+void LED_Init(uint8_t pinNumber)
 {
-	for(uint8_t i = 0; i < numberOfLeds; i++)
+	if(pinNumber < NUMBER_OF_LEDS)
 	{
-		GPIO_InitStructArray[i].Pin = GPIO_Pinx[i];
-		GPIO_InitStructArray[i].Mode = GPIO_MODE_OUTPUT_PP;
-		HAL_GPIO_Init(GPIO_Portx[i],&GPIO_InitStructArray[i]);
+		GPIO_InitStructArray[pinNumber].Pin = GPIO_Pinx[pinNumber];
+		GPIO_InitStructArray[pinNumber].Mode = GPIO_MODE_OUTPUT_PP;
+		HAL_GPIO_Init(GPIO_Portx[pinNumber],&GPIO_InitStructArray[pinNumber]);
 	}
 }
 
-void LED_Write(LED_ID LedID,LED_State LedState)
+void LED_Write(uint8_t pinNumber,LED_State LedState)
 {
 	GPIO_PinState pinState;
 	switch(LedState)
@@ -27,5 +27,5 @@ void LED_Write(LED_ID LedID,LED_State LedState)
 			pinState = GPIO_PIN_SET;
 			break;
 	}
-	HAL_GPIO_WritePin(GPIO_Portx[LedID],GPIO_Pinx[LedID],pinState);
+	HAL_GPIO_WritePin(GPIO_Portx[pinNumber],GPIO_Pinx[pinNumber],pinState);
 }

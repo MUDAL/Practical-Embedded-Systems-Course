@@ -3,14 +3,14 @@
 
 #define NUMBER_OF_BUTTONS		3
 
-typedef enum
+enum ButtonPin
 {
-	BUTTON1 = 0,
-	BUTTON2,
-	BUTTON3
-}ButtonID;
+	BUTTON_PC0 = 0,
+	BUTTON_PC1,
+	BUTTON_PC13
+};
 
-extern void Button_Init(uint8_t numberOfButtons);
-extern bool Button_Pressed(ButtonID buttonID);
+extern void Button_Init(uint8_t pinNumber);
+extern bool Button_Pressed(uint8_t pinNumber);
 
 #endif //BUTTON_H

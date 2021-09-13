@@ -3,20 +3,20 @@
 
 #define NUMBER_OF_LEDS	3
 
-typedef enum
+enum LEDPin
 {
-	LED1 = 0,
-	LED2,
-	LED3
-}LED_ID;
+	LED_PA5 = 0,
+	LED_PC5,
+	LED_PC6
+};
 
 class LED
 {
 	private:
-		LED_ID id;
+		uint8_t pin;
 	
 	public:
-		LED(LED_ID ledID);
+		LED(uint8_t pinNumber);
 		void TurnOn(void);
 		void TurnOff(void);
 		void Toggle(void);

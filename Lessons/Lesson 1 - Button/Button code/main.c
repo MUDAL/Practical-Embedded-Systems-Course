@@ -8,19 +8,21 @@ int main(void)
 {																				
 	//Initializations
 	System_Init();
-	Button_Init(NUMBER_OF_BUTTONS);
+	Button_Init(BUTTON_PC0);
+	Button_Init(BUTTON_PC1);
+	Button_Init(BUTTON_PC13);
 																							 
 	while(1)
 	{
-		if(Button_Pressed(BUTTON1))
+		if(Button_Pressed(BUTTON_PC0))
 		{
 			i++;
 		}
-		if(Button_Pressed(BUTTON2))
+		if(Button_Pressed(BUTTON_PC1))
 		{
 			j++;
 		}
-		if(Button_Pressed(BUTTON3))
+		if(Button_Pressed(BUTTON_PC13))
 		{
 			k++;
 		}

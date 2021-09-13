@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\LED_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\LED_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Sep 12 15:56:31 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Sep 13 19:37:02 2021
 <BR><P>
 <H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -530,7 +530,7 @@ Global Symbols
 <P><STRONG><a name="[6d]"></a>HAL_GPIO_Init</STRONG> (Thumb, 436 bytes, Stack size 24 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED::LED(LED_ID)
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED::LED(unsigned char)
 </UL>
 
 <P><STRONG><a name="[6b]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
@@ -623,20 +623,20 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>LED::LED(LED_ID)</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, led.o(i._ZN3LEDC1E6LED_ID))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LED::LED(LED_ID) &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[6c]"></a>LED::LED(unsigned char)</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, led.o(i._ZN3LEDC1Eh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LED::LED(unsigned char) &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[99]"></a>LED::LED__sub_object(LED_ID)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, led.o(i._ZN3LEDC1E6LED_ID), UNUSED)
+<P><STRONG><a name="[99]"></a>LED::LED__sub_object(unsigned char)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, led.o(i._ZN3LEDC1Eh), UNUSED)
 
 <P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; System_Init() &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED::LED(LED_ID)
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED::LED(unsigned char)
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED::Toggle()
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_DelayMs(unsigned)
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()

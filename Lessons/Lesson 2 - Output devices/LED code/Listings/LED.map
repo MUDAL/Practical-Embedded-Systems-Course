@@ -466,18 +466,18 @@ Image Symbol Table
     i.HAL_NVIC_SetPriorityGrouping           0x08000618   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
     i.HAL_SYSTICK_Config                     0x08000640   Section        0  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
     i.LED_Init                               0x08000674   Section        0  led.o(i.LED_Init)
-    i.LED_Write                              0x080006c4   Section        0  led.o(i.LED_Write)
-    i.SysTick_Handler                        0x080006f8   Section        0  system.o(i.SysTick_Handler)
-    i.SystemInit                             0x08000700   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.System_DelayMs                         0x0800071c   Section        0  system.o(i.System_DelayMs)
-    i.System_Init                            0x08000728   Section        0  system.o(i.System_Init)
-    i.__NVIC_GetPriorityGrouping             0x08000790   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    __NVIC_GetPriorityGrouping               0x08000791   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    i.__NVIC_SetPriority                     0x080007a0   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x080007a1   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.main                                   0x080007c8   Section        0  main.o(i.main)
-    x$fpl$fpinit                             0x080007f2   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x080007f2   Number         0  fpinit.o(x$fpl$fpinit)
+    i.LED_Write                              0x080006bc   Section        0  led.o(i.LED_Write)
+    i.SysTick_Handler                        0x080006f0   Section        0  system.o(i.SysTick_Handler)
+    i.SystemInit                             0x080006f8   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.System_DelayMs                         0x08000714   Section        0  system.o(i.System_DelayMs)
+    i.System_Init                            0x08000720   Section        0  system.o(i.System_Init)
+    i.__NVIC_GetPriorityGrouping             0x08000788   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x08000789   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x08000798   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x08000799   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.main                                   0x080007c0   Section        0  main.o(i.main)
+    x$fpl$fpinit                             0x080007fa   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x080007fa   Number         0  fpinit.o(x$fpl$fpinit)
     .data                                    0x20000000   Section       18  led.o(.data)
     GPIO_Portx                               0x20000000   Data          12  led.o(.data)
     GPIO_Pinx                                0x2000000c   Data           6  led.o(.data)
@@ -668,18 +668,18 @@ Image Symbol Table
     HAL_NVIC_SetPriority                     0x0800059b   Thumb Code   124  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriority)
     HAL_NVIC_SetPriorityGrouping             0x08000619   Thumb Code    32  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
     HAL_SYSTICK_Config                       0x08000641   Thumb Code    52  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
-    LED_Init                                 0x08000675   Thumb Code    66  led.o(i.LED_Init)
-    LED_Write                                0x080006c5   Thumb Code    44  led.o(i.LED_Write)
-    SysTick_Handler                          0x080006f9   Thumb Code     8  system.o(i.SysTick_Handler)
-    SystemInit                               0x08000701   Thumb Code    24  system_stm32f4xx.o(i.SystemInit)
-    System_DelayMs                           0x0800071d   Thumb Code    12  system.o(i.System_DelayMs)
-    System_Init                              0x08000729   Thumb Code   100  system.o(i.System_Init)
-    main                                     0x080007c9   Thumb Code    42  main.o(i.main)
-    _fp_init                                 0x080007f3   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080007fb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080007fb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x080007fc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800081c   Number         0  anon$$obj.o(Region$$Table)
+    LED_Init                                 0x08000675   Thumb Code    58  led.o(i.LED_Init)
+    LED_Write                                0x080006bd   Thumb Code    44  led.o(i.LED_Write)
+    SysTick_Handler                          0x080006f1   Thumb Code     8  system.o(i.SysTick_Handler)
+    SystemInit                               0x080006f9   Thumb Code    24  system_stm32f4xx.o(i.SystemInit)
+    System_DelayMs                           0x08000715   Thumb Code    12  system.o(i.System_DelayMs)
+    System_Init                              0x08000721   Thumb Code   100  system.o(i.System_Init)
+    main                                     0x080007c1   Thumb Code    58  main.o(i.main)
+    _fp_init                                 0x080007fb   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000803   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000803   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08000804   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000824   Number         0  anon$$obj.o(Region$$Table)
     uwTick                                   0x20000014   Data           4  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000018   Data           4  stm32f4xx_hal.o(.data)
     uwTickFreq                               0x2000001c   Data           1  stm32f4xx_hal.o(.data)
@@ -695,9 +695,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000235
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000840, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000848, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000081c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000824, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -772,31 +772,31 @@ Memory Map of the image
     0x08000616   0x08000616   0x00000002   PAD
     0x08000618   0x08000618   0x00000028   Code   RO          373    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
     0x08000640   0x08000640   0x00000034   Code   RO          377    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
-    0x08000674   0x08000674   0x00000050   Code   RO          142    i.LED_Init          led.o
-    0x080006c4   0x080006c4   0x00000034   Code   RO          143    i.LED_Write         led.o
-    0x080006f8   0x080006f8   0x00000008   Code   RO           30    i.SysTick_Handler   system.o
-    0x08000700   0x08000700   0x0000001c   Code   RO          929    i.SystemInit        system_stm32f4xx.o
-    0x0800071c   0x0800071c   0x0000000c   Code   RO           31    i.System_DelayMs    system.o
-    0x08000728   0x08000728   0x00000068   Code   RO           32    i.System_Init       system.o
-    0x08000790   0x08000790   0x00000010   Code   RO          379    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x080007a0   0x080007a0   0x00000028   Code   RO          380    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x080007c8   0x080007c8   0x0000002a   Code   RO            1    i.main              main.o
-    0x080007f2   0x080007f2   0x0000000a   Code   RO         1077    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080007fc   0x080007fc   0x00000020   Data   RO         1135    Region$$Table       anon$$obj.o
+    0x08000674   0x08000674   0x00000048   Code   RO          142    i.LED_Init          led.o
+    0x080006bc   0x080006bc   0x00000034   Code   RO          143    i.LED_Write         led.o
+    0x080006f0   0x080006f0   0x00000008   Code   RO           30    i.SysTick_Handler   system.o
+    0x080006f8   0x080006f8   0x0000001c   Code   RO          929    i.SystemInit        system_stm32f4xx.o
+    0x08000714   0x08000714   0x0000000c   Code   RO           31    i.System_DelayMs    system.o
+    0x08000720   0x08000720   0x00000068   Code   RO           32    i.System_Init       system.o
+    0x08000788   0x08000788   0x00000010   Code   RO          379    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x08000798   0x08000798   0x00000028   Code   RO          380    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080007c0   0x080007c0   0x0000003a   Code   RO            1    i.main              main.o
+    0x080007fa   0x080007fa   0x0000000a   Code   RO         1077    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08000804   0x08000804   0x00000020   Data   RO         1135    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800081c, Size: 0x00000024, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000824, Size: 0x00000024, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0800081c   0x00000012   Data   RW          145    .data               led.o
-    0x20000012   0x0800082e   0x00000002   PAD
-    0x20000014   0x08000830   0x00000009   Data   RW          202    .data               stm32f4xx_hal.o
-    0x2000001d   0x08000839   0x00000003   PAD
-    0x20000020   0x0800083c   0x00000004   Data   RW          931    .data               system_stm32f4xx.o
+    0x20000000   0x08000824   0x00000012   Data   RW          145    .data               led.o
+    0x20000012   0x08000836   0x00000002   PAD
+    0x20000014   0x08000838   0x00000009   Data   RW          202    .data               stm32f4xx_hal.o
+    0x2000001d   0x08000841   0x00000003   PAD
+    0x20000020   0x08000844   0x00000004   Data   RW          931    .data               system_stm32f4xx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000024, Load base: 0x08000840, Size: 0x0000069c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000024, Load base: 0x08000848, Size: 0x0000069c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -813,8 +813,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       132         22          0         18         60       1955   led.o
-        42          0          0          0          0       5391   main.o
+       124         22          0         18         60       1891   led.o
+        58          0          0          0          0       5403   main.o
         64         26        404          0       1536        920   startup_stm32f401xe.o
        202         34          0          9          0      10531   stm32f4xx_hal.o
        272         22          0          0          0      34258   stm32f4xx_hal_cortex.o
@@ -823,7 +823,7 @@ Image component sizes
         28          4          0          4          0       1519   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      1346        144        436         36       1596     369635   Object Totals
+      1354        144        436         36       1596     369583   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          5          0          0   (incl. Padding)
 
@@ -874,15 +874,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1640        160        436         36       1692     368479   Grand Totals
-      1640        160        436         36       1692     368479   ELF Image Totals
-      1640        160        436         36          0          0   ROM Totals
+      1648        160        436         36       1692     368427   Grand Totals
+      1648        160        436         36       1692     368427   ELF Image Totals
+      1648        160        436         36          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2076 (   2.03kB)
+    Total RO  Size (Code + RO Data)                 2084 (   2.04kB)
     Total RW  Size (RW Data + ZI Data)              1728 (   1.69kB)
-    Total ROM Size (Code + RO Data + RW Data)       2112 (   2.06kB)
+    Total ROM Size (Code + RO Data + RW Data)       2120 (   2.07kB)
 
 ==============================================================================
 

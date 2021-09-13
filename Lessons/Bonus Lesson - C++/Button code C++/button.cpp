@@ -11,10 +11,10 @@ namespace
 
 bool Button::IsDebounced(void)
 {
-	if(HAL_GPIO_ReadPin(GPIO_Portx[id],GPIO_Pinx[id]) == GPIO_PIN_RESET)
+	if(HAL_GPIO_ReadPin(GPIO_Portx[pin],GPIO_Pinx[pin]) == GPIO_PIN_RESET)
 	{
 		HAL_Delay(10);
-		if(HAL_GPIO_ReadPin(GPIO_Portx[id],GPIO_Pinx[id]) == GPIO_PIN_RESET)
+		if(HAL_GPIO_ReadPin(GPIO_Portx[pin],GPIO_Pinx[pin]) == GPIO_PIN_RESET)
 		{
 			return true;
 		}
@@ -22,16 +22,16 @@ bool Button::IsDebounced(void)
 	return false;
 }
 
-Button::Button(ButtonID buttonID)
+Button::Button(uint8_t pinNumber)
 {
-	if(buttonID < NUMBER_OF_BUTTONS)
+	if(pinNumber < NUMBER_OF_BUTTONS)
 	{
-		id = buttonID;
+		pin = pinNumber;
 		prevPressed = false;
-		GPIO_InitStructArray[id].Pin = GPIO_Pinx[id];
-		GPIO_InitStructArray[id].Mode = GPIO_MODE_INPUT;
-		GPIO_InitStructArray[id].Pull = GPIO_PULLUP;
-		HAL_GPIO_Init(GPIO_Portx[id],&GPIO_InitStructArray[id]);
+		GPIO_InitStructArray[pinNumber].Pin = GPIO_Pinx[pinNumber];
+		GPIO_InitStructArray[pinNumber].Mode = GPIO_MODE_INPUT;
+		GPIO_InitStructArray[pinNumber].Pull = GPIO_PULLUP;
+		HAL_GPIO_Init(GPIO_Portx[pinNumber],&GPIO_InitStructArray[pinNumber]);
 	}
 }
 

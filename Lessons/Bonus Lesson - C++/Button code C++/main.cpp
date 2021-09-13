@@ -8,9 +8,9 @@ int main(void)
 {
 	//Initializations
 	System_Init();
-	Button firstButton(BUTTON1);
-	Button secondButton(BUTTON2);
-	Button thirdButton(BUTTON3);
+	Button firstButton(BUTTON_PC0);
+	Button secondButton(BUTTON_PC1);
+	Button thirdButton(BUTTON_PC13);
 	
 	while(1)
 	{

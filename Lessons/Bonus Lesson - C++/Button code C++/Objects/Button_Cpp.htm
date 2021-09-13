@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Button_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Button_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Sep 12 15:57:14 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Sep 13 19:38:06 2021
 <BR><P>
 <H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -530,7 +530,7 @@ Global Symbols
 <P><STRONG><a name="[6d]"></a>HAL_GPIO_Init</STRONG> (Thumb, 436 bytes, Stack size 24 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button::Button(ButtonID)
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button::Button(unsigned char)
 </UL>
 
 <P><STRONG><a name="[6a]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
@@ -624,20 +624,20 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>Button::Button(ButtonID)</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, button.o(i._ZN6ButtonC1E8ButtonID))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Button::Button(ButtonID) &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[6c]"></a>Button::Button(unsigned char)</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, button.o(i._ZN6ButtonC1Eh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Button::Button(unsigned char) &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[99]"></a>Button::Button__sub_object(ButtonID)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, button.o(i._ZN6ButtonC1E8ButtonID), UNUSED)
+<P><STRONG><a name="[99]"></a>Button::Button__sub_object(unsigned char)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, button.o(i._ZN6ButtonC1Eh), UNUSED)
 
 <P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; System_Init() &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button::Button(ButtonID)
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button::Button(unsigned char)
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button::Pressed()
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
 </UL>
