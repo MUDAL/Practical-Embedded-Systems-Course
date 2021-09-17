@@ -3,23 +3,24 @@
 #include "keypad.h"
 
 char pressedKey = '\0';
+char arr[100] = {0};
 
 int main(void)
 {
 	//Variables
 	pinStruct_t columnPins[NUMBER_OF_COLUMNS] =
 	{
-		{GPIOC,GPIO_PIN_0},
-		{GPIOC,GPIO_PIN_1},
-		{GPIOC,GPIO_PIN_2},
-		{GPIOC,GPIO_PIN_3}
+		{GPIOC,GPIO_PIN_6},
+		{GPIOA,GPIO_PIN_6},
+		{GPIOA,GPIO_PIN_7},
+		{GPIOB,GPIO_PIN_6}
 	};
 	pinStruct_t rowPins[NUMBER_OF_ROWS] =
 	{
-		{GPIOC,GPIO_PIN_4},
-		{GPIOC,GPIO_PIN_5},
-		{GPIOC,GPIO_PIN_6},
-		{GPIOC,GPIO_PIN_7}	
+		{GPIOA,GPIO_PIN_0},
+		{GPIOA,GPIO_PIN_1},
+		{GPIOA,GPIO_PIN_4},
+		{GPIOB,GPIO_PIN_0}			
 	};
 	//Initializations
 	System_Init();
@@ -27,6 +28,16 @@ int main(void)
 	
 	while(1)
 	{
-		pressedKey = keypad.GetChar();
+		pressedKey = keypad.GetCharShortPress();
+		if(pressedKey != '\0')
+		{
+			static uint8_t i;
+			if(i>99)
+			{
+				i = 0;
+			}
+			arr[i] = pressedKey;
+			i++;
+		}
 	}
 }

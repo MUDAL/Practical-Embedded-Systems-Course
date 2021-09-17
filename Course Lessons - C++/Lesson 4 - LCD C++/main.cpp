@@ -16,12 +16,15 @@ int main(void)
 	System_Init();
 	LCD lcd(rs,en,d4,d5,d6,d7);
 	
-	lcd.WriteString("I love football");
+	lcd.Print("I love football");
 	HAL_Delay(1000);
 	lcd.Clear();
-	lcd.WriteString("Go home!!!!!!");
+	lcd.Print("Go home!!!!!!");
 	HAL_Delay(1000);
 	lcd.Clear();
+	HAL_Delay(1000);
+	uint8_t number = 65;
+	lcd.Print(number);
 	
 	while(1)
 	{

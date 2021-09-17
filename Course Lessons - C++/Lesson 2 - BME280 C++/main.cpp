@@ -2,8 +2,7 @@
 #include "system.h"
 #include "bme280.h"
 
-uint8_t temperature = 0;
-uint8_t humidity = 0;
+bme280Data_t bme280Data = {0};
 
 int main(void)
 {
@@ -16,8 +15,7 @@ int main(void)
 	
 	while(1)
 	{
-		temperature = bme280.GetTemperature();
-		humidity = bme280.GetHumidity();
+		bme280Data = bme280.GetData();
 		HAL_Delay(1000);
 	}
 }
