@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Keypad_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Keypad_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Sep 17 19:36:18 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Sep 18 17:38:42 2021
 <BR><P>
 <H3>Maximum Stack Usage =        280 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -549,8 +549,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
 </UL>
 
-<P><STRONG><a name="[6c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectColumn(unsigned char)
+<P><STRONG><a name="[6d]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
+<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectRow(unsigned char)
 </UL>
 
 <P><STRONG><a name="[5e]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
@@ -629,24 +629,24 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
 </UL>
 
-<P><STRONG><a name="[6b]"></a>Keypad::SelectColumn(unsigned char)</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad12SelectColumnEh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Keypad::SelectColumn(unsigned char)
-</UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-</UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
-</UL>
-
-<P><STRONG><a name="[6d]"></a>Keypad::GetCharShortPress()</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad17GetCharShortPressEv))
+<P><STRONG><a name="[6b]"></a>Keypad::GetCharShortPress()</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad17GetCharShortPressEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Keypad::GetCharShortPress() &rArr; Keypad::IsDebounced(pinStruct_t*) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectColumn(unsigned char)
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectRow(unsigned char)
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[6c]"></a>Keypad::SelectRow(unsigned char)</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad9SelectRowEh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Keypad::SelectRow(unsigned char)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
 </UL>
 
 <P><STRONG><a name="[6e]"></a>Keypad::Keypad(pinStruct_t*, pinStruct_t*)</STRONG> (Thumb, 156 bytes, Stack size 184 bytes, keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_))
@@ -663,7 +663,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = main &rArr; Keypad::Keypad(pinStruct_t*, pinStruct_t*) &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::Keypad(pinStruct_t*, pinStruct_t*)
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>

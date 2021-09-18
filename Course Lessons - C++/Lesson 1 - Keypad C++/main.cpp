@@ -8,14 +8,14 @@ char arr[100] = {0};
 int main(void)
 {
 	//Variables
-	pinStruct_t columnPins[NUMBER_OF_COLUMNS] =
+	pinStruct_t rowPins[NUMBER_OF_ROWS] =
 	{
 		{GPIOC,GPIO_PIN_6},
 		{GPIOA,GPIO_PIN_6},
 		{GPIOA,GPIO_PIN_7},
 		{GPIOB,GPIO_PIN_6}
 	};
-	pinStruct_t rowPins[NUMBER_OF_ROWS] =
+	pinStruct_t columnPins[NUMBER_OF_COLUMNS] =
 	{
 		{GPIOA,GPIO_PIN_0},
 		{GPIOA,GPIO_PIN_1},
@@ -24,7 +24,7 @@ int main(void)
 	};
 	//Initializations
 	System_Init();
-	Keypad keypad(columnPins,rowPins);
+	Keypad keypad(rowPins,columnPins);
 	
 	while(1)
 	{

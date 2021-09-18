@@ -391,6 +391,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Game</GroupName>
+          <Files>
+            <File>
+              <FileName>game.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\game.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>game.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\game.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Lib</GroupName>
           <Files>
             <File>
@@ -534,5 +549,14 @@
       </file>
     </files>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>TicTacToe_Cpp</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
