@@ -231,10 +231,9 @@ void Game_Start(LCD& lcd,Keypad& keypad)
 		CheckForDiagonalWin
 	};
 	
-	DisplayGameBoard(lcd,gameBoard);
-	
 	while(1)
 	{//Game loop
+		DisplayGameBoard(lcd,gameBoard);
 		char pressedKey = keypad.GetCharShortPress();
 		
 		if(pressedKey == 'B')
@@ -262,6 +261,5 @@ void Game_Start(LCD& lcd,Keypad& keypad)
 				}
 			}
 		}
-		DisplayGameBoard(lcd,gameBoard);
 	}
 }

@@ -111,6 +111,18 @@ void LCD::Write(GPIO_PinState lcdMode,char byte)
 	HAL_Delay(1);
 }
 
+void LCD::PrintInteger(uint32_t data)
+{
+	char integerToStringBuffer[INT_TO_STR_BUFFER_LEN + 1] = {0};
+	
+	if(data < 10)
+	{
+		LCD::Print('0');
+	}
+	IntegerToString(data,integerToStringBuffer);
+	LCD::Print(integerToStringBuffer);		
+}
+
 LCD::LCD(pinStruct_t& RS,
 				 pinStruct_t& EN, 
 				 pinStruct_t& D4,
@@ -186,14 +198,17 @@ void LCD::Print(const char* pData)
 
 void LCD::Print(uint8_t& data)
 {
-	char integerToStringBuffer[3] = {0};
-	
-	if(data < 10)
-	{
-		LCD::Print('0');
-	}
-	IntegerToString(data,integerToStringBuffer);
-	LCD::Print(integerToStringBuffer);	
+	LCD::PrintInteger(data);
+}
+
+void LCD::Print(uint16_t& data)
+{
+	LCD::PrintInteger(data);
+}
+
+void LCD::Print(uint32_t& data)
+{
+	LCD::PrintInteger(data);
 }
 	
 void LCD::Clear(void)

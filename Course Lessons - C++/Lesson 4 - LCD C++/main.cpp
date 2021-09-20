@@ -23,7 +23,7 @@ int main(void)
 	HAL_Delay(1000);
 	lcd.Clear();
 	HAL_Delay(1000);
-	uint8_t number = 65;
+	uint16_t number = 47;
 	lcd.Print(number);
 	
 	while(1)
