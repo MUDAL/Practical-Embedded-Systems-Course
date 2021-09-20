@@ -21,18 +21,18 @@ int main(void)
 	
 	//Initializations
 	System_Init();
-	DS3231 ds3231(I2C1,scl,sda);
-	BME280 bme280(I2C1,scl,sda);
-	LCD lcd(rs,en,d4,d5,d6,d7);
+	static DS3231 ds3231(I2C1,scl,sda);
+	static BME280 bme280(I2C1,scl,sda);
+	static LCD lcd(rs,en,d4,d5,d6,d7);
 	
 	ds3231.SetFormat(TWELVE_HR_FORMAT_PM);
 	ds3231.SetTime(9,59);
 	
 	lcd.Print("Time: ");
 	lcd.SetCursor(1,0);
-	lcd.Print("Temperature:");
+	lcd.Print("Temperature:   C");
 	lcd.SetCursor(2,0);
-	lcd.Print("Humidity:");
+	lcd.Print("Humidity:   %");
 	
 	while(1)
 	{
@@ -59,9 +59,7 @@ int main(void)
 		bme280Data = bme280.GetData();
 		lcd.SetCursor(1,13);
 		lcd.Print(bme280Data.temperature);
-		lcd.Print('C');
 		lcd.SetCursor(2,10);
 		lcd.Print(bme280Data.humidity);
-		lcd.Print('%');
 	}
 }
