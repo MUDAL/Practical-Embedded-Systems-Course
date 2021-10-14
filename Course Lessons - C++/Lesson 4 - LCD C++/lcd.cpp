@@ -6,116 +6,106 @@ RESET RS pin for command mode.
 SET		RS pin for data mode.  
 */
 
-namespace
+enum LCDCommands
 {
-	enum LCDCommands
-	{
-		FUNCTION_SET_8BIT	= 0x03,
-		FUNCTION_SET_4BIT = 0x02,
-		FUNCTION_SET_2LINE_5x8DOT = 0x28,
-		CLEAR_DISPLAY = 0x01,
-		DISPLAY_ON_CURSOR_ON = 0x0E,
-		DISPLAY_ON_CURSOR_OFF = 0x0C,
-		ENTRY_MODE_INCREMENT_CURSOR = 0x06
-	};
-	
-	const uint8_t ddramAddr[4][20] = 
-	{{0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13},
-	 {0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53},
-	 {0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27},
-	 {0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x5B,0x5C,0x5D,0x5E,0x5F,0x60,0x61,0x62,0x63,0x64,0x65,0x66,0x67}
-	};
-		
-	const GPIO_PinState pinState[2] = {GPIO_PIN_RESET,GPIO_PIN_SET};
-	
-	/**
-	@brief Converts integer to string.  
-	@param[in] integer: Integer to be converted to a string.  
-	@param[out] pBuffer: String equivalent of the integer. i.e.  
-	after the function call, the result of the conversion is  
-	stored here.
-	@return None
-	*/
-	void IntegerToString(uint32_t integer,char* pBuffer)
-	{
-		if (integer == 0)
-		{//Edge case  
-			pBuffer[0] = '0';
-			return;
-		}
-		uint32_t copyOfInt = integer;
-		uint8_t noOfDigits = 0;
-
-		while(copyOfInt > 0)
-		{
-			copyOfInt /= 10;
-			noOfDigits++;
-		}
-		while (integer > 0)
-		{
-			pBuffer[noOfDigits - 1] = '0' + (integer % 10);
-			integer /= 10;
-			noOfDigits--;
-		}
-	}
+	FUNCTION_SET_8BIT	= 0x03,
+	FUNCTION_SET_4BIT = 0x02,
+	FUNCTION_SET_2LINE_5x8DOT = 0x28,
+	CLEAR_DISPLAY = 0x01,
+	DISPLAY_ON_CURSOR_ON = 0x0E,
+	DISPLAY_ON_CURSOR_OFF = 0x0C,
+	ENTRY_MODE_INCREMENT_CURSOR = 0x06
 };
 
-void LCD::Write(GPIO_PinState lcdMode,char byte)
+enum NibbleStartingIndex
 {
-	//High nibble
-	uint8_t byteArr[4] = 
+	LOW_NIBBLE = 0,
+	HIGH_NIBBLE = 4
+};
+
+const uint8_t ddramAddr[4][20] = 
+{{0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13},
+ {0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53},
+ {0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27},
+ {0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x5B,0x5C,0x5D,0x5E,0x5F,0x60,0x61,0x62,0x63,0x64,0x65,0x66,0x67}
+};
+
+/**
+@brief Converts integer to string.  
+@param[in] integer: Integer to be converted to a string.  
+@param[out] pBuffer: String equivalent of the integer. i.e.  
+after the function call, the result of the conversion is  
+stored here.
+@return None
+*/
+static void IntegerToString(uint32_t integer,char* pBuffer)
+{
+	if (integer == 0)
+	{//Edge case  
+		pBuffer[0] = '0';
+		return;
+	}
+	uint32_t copyOfInt = integer;
+	uint8_t noOfDigits = 0;
+
+	while(copyOfInt > 0)
 	{
-		(byte&(1<<4))>>4,
-		(byte&(1<<5))>>5,
-		(byte&(1<<6))>>6,
-		(byte&(1<<7))>>7
-	};
+		copyOfInt /= 10;
+		noOfDigits++;
+	}
+	while (integer > 0)
+	{
+		pBuffer[noOfDigits - 1] = '0' + (integer % 10);
+		integer /= 10;
+		noOfDigits--;
+	}
+}
+
+void LCD::WriteNibble(char byte,uint8_t nibbleInitIndex)
+{
+	const GPIO_PinState pinState[2] = {GPIO_PIN_RESET,GPIO_PIN_SET};
+	uint8_t nibbleArr[4] = {0};
+	uint8_t j = 0;
+	
+	for(uint8_t i = nibbleInitIndex; i < nibbleInitIndex+4; i++)
+	{
+		nibbleArr[j] = (byte&(1<<i))>>i;
+		j++;
+	}
+	//Clear data pins
+	for(uint8_t i = 0; i < 4; i++)
+	{
+		HAL_GPIO_WritePin(dataPins[i].port,
+									    dataPins[i].selectedPin,
+											GPIO_PIN_RESET);
+	}
+	//Send nibble
+	for(uint8_t i = 0; i < 4; i++)
+	{
+		HAL_GPIO_WritePin(dataPins[i].port,
+											dataPins[i].selectedPin,
+											pinState[nibbleArr[i]]);
+	}
+	//High to low pulse on EN pin (to transfer nibble)
+	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_SET);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_RESET);
+	HAL_Delay(1);	
+}
+
+void LCD::WriteByte(GPIO_PinState lcdMode,char byte)
+{
 	//Register select
 	HAL_GPIO_WritePin(rs.port,rs.selectedPin,lcdMode);
-	//Send high nibble to D4-D7(clear the pins first)
-	for(uint8_t i = 0; i < 4; i++)
-	{
-		HAL_GPIO_WritePin(dataPins[i].port,dataPins[i].selectedPin,GPIO_PIN_RESET);
-	}
-	for(uint8_t i = 0; i < 4; i++)
-	{
-		HAL_GPIO_WritePin(dataPins[i].port,dataPins[i].selectedPin,pinState[byteArr[i]]);
-	}
-	//High to low pulse on EN pin
-	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_SET);
-	HAL_Delay(1);
-	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_RESET);
-	HAL_Delay(1);
-	
-	//Low nibble
-	uint8_t lowNibbleArr[4] = 
-	{
-	 (byte&(1<<0))>>0,
-	 (byte&(1<<1))>>1,
-	 (byte&(1<<2))>>2,
-	 (byte&(1<<3))>>3	
-	};
-	//Send low nibble to D4-D7 (clear the pins first)
-	for(uint8_t i = 0; i < 4; i++)
-	{
-		HAL_GPIO_WritePin(dataPins[i].port,dataPins[i].selectedPin,GPIO_PIN_RESET);
-	}
-	for(uint8_t i = 0; i < 4; i++)
-	{
-		HAL_GPIO_WritePin(dataPins[i].port,dataPins[i].selectedPin,pinState[lowNibbleArr[i]]);
-	}
-	//High to low pulse on EN pin
-	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_SET);
-	HAL_Delay(1);
-	HAL_GPIO_WritePin(en.port,en.selectedPin,GPIO_PIN_RESET);
-	HAL_Delay(1);
+	LCD::WriteNibble(byte,HIGH_NIBBLE);
+	LCD::WriteNibble(byte,LOW_NIBBLE);
 }
 
 void LCD::PrintString(const char* pData)
 {
 	while(*pData != '\0')
 	{
-		LCD::Write(GPIO_PIN_SET,*pData);
+		LCD::WriteByte(GPIO_PIN_SET,*pData);
 		pData++;
 	}	
 }
@@ -158,9 +148,9 @@ LCD::LCD(pinStruct_t& RS,
 
 	//LCD Initialization sequence according to datasheet
 	HAL_Delay(16); //Power-on delay (must be greater than 15ms for 4.5v and 40ms for 2.7v)
-	LCD::Write(GPIO_PIN_RESET,FUNCTION_SET_8BIT);
+	LCD::WriteByte(GPIO_PIN_RESET,FUNCTION_SET_8BIT);
 	HAL_Delay(5); //wait for more than 4.1ms
-	LCD::Write(GPIO_PIN_RESET,FUNCTION_SET_8BIT);
+	LCD::WriteByte(GPIO_PIN_RESET,FUNCTION_SET_8BIT);
 	HAL_Delay(1); //wait for more than 100us
 	
 	//4-bit operation commands
@@ -174,7 +164,7 @@ LCD::LCD(pinStruct_t& RS,
 	};
 	for(uint8_t i = 0; i < 5; i++)
 	{
-		LCD::Write(GPIO_PIN_RESET,fourBitCommandSetting[i]);
+		LCD::WriteByte(GPIO_PIN_RESET,fourBitCommandSetting[i]);
 	}
 }
 
@@ -188,12 +178,12 @@ void LCD::SetCursor(uint8_t row,uint8_t column)
 	/*
 	Set DB7 and write address into D4-D7 to set DDRAM address
 	*/
-	LCD::Write(GPIO_PIN_RESET,((1<<7) | ddramAddr[row][column]));
+	LCD::WriteByte(GPIO_PIN_RESET,((1<<7) | ddramAddr[row][column]));
 }
 
 void LCD::Print(char data)
 {
-	LCD::Write(GPIO_PIN_SET,data);
+	LCD::WriteByte(GPIO_PIN_SET,data);
 }
 
 void LCD::Print(const char* pData)
@@ -218,5 +208,5 @@ void LCD::Print(uint32_t& data)
 	
 void LCD::Clear(void)
 {
-	LCD::Write(GPIO_PIN_RESET,CLEAR_DISPLAY);
+	LCD::WriteByte(GPIO_PIN_RESET,CLEAR_DISPLAY);
 }
