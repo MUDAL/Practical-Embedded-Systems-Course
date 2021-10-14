@@ -116,7 +116,7 @@ void LCD::PrintInteger(uint32_t data)
 	
 	if(data < 10)
 	{
-		LCD::Print('0');
+		LCD::WriteByte(GPIO_PIN_SET,'0');
 	}
 	IntegerToString(data,integerToStringBuffer);
 	LCD::PrintString(integerToStringBuffer);		

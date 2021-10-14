@@ -25,9 +25,14 @@ int main(void)
 	HAL_Delay(1000);
 	uint8_t number = 15;
 	lcd.Print(number);
-	
+	HAL_Delay(1000);
+	uint32_t var = 0;
 	while(1)
 	{
+		lcd.SetCursor(0,0);
+		lcd.Print(var);
+		var++;
+		HAL_Delay(1000);
 	}
 }
 
