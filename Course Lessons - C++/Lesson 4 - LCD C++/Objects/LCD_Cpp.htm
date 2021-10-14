@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\LCD_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\LCD_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Oct 14 22:59:18 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Oct 14 23:06:53 2021
 <BR><P>
 <H3>Maximum Stack Usage =        400 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -640,8 +640,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
 
-<P><STRONG><a name="[6d]"></a>LCD::PrintInteger(unsigned)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, lcd.o(i._ZN3LCD12PrintIntegerEj))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+<P><STRONG><a name="[6d]"></a>LCD::PrintInteger(unsigned)</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD12PrintIntegerEj))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
@@ -668,7 +668,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[71]"></a>LCD::Print(unsigned char&)</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintERh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = LCD::Print(unsigned char&) &rArr; LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = LCD::Print(unsigned char&) &rArr; LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
 </UL>
@@ -676,7 +676,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[72]"></a>LCD::Print(unsigned&)</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintERj))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = LCD::Print(unsigned&) &rArr; LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = LCD::Print(unsigned&) &rArr; LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
 </UL>

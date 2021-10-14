@@ -6,8 +6,6 @@ RESET RS pin for command mode.
 SET		RS pin for data mode.  
 */
 
-const uint8_t intToStrBufferLen = 10;
-
 enum LCDCommands
 {
 	FUNCTION_SET_8BIT	= 0x03,
@@ -113,7 +111,8 @@ void LCD::PrintString(const char* pData)
 
 void LCD::PrintInteger(uint32_t data)
 {
-	char integerToStringBuffer[intToStrBufferLen + 1] = {0};
+	const uint8_t maxNumberOfDigits = 10;
+	char integerToStringBuffer[maxNumberOfDigits + 1] = {0};
 	
 	if(data < 10)
 	{
