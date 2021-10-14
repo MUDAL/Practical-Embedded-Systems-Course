@@ -6,6 +6,8 @@ RESET RS pin for command mode.
 SET		RS pin for data mode.  
 */
 
+const uint8_t intToStrBufferLen = 10;
+
 enum LCDCommands
 {
 	FUNCTION_SET_8BIT	= 0x03,
@@ -17,7 +19,7 @@ enum LCDCommands
 	ENTRY_MODE_INCREMENT_CURSOR = 0x06
 };
 
-enum NibbleStartingIndex
+enum NibbleBitPosition
 {
 	LOW_NIBBLE = 0,
 	HIGH_NIBBLE = 4
@@ -61,13 +63,13 @@ static void IntegerToString(uint32_t integer,char* pBuffer)
 	}
 }
 
-void LCD::WriteNibble(char byte,uint8_t nibbleInitIndex)
+void LCD::WriteNibble(char byte,uint8_t nibbleBitPos)
 {
 	const GPIO_PinState pinState[2] = {GPIO_PIN_RESET,GPIO_PIN_SET};
 	uint8_t nibbleArr[4] = {0};
 	uint8_t j = 0;
 	
-	for(uint8_t i = nibbleInitIndex; i < nibbleInitIndex+4; i++)
+	for(uint8_t i = nibbleBitPos; i < nibbleBitPos+4; i++)
 	{
 		nibbleArr[j] = (byte&(1<<i))>>i;
 		j++;
@@ -95,8 +97,7 @@ void LCD::WriteNibble(char byte,uint8_t nibbleInitIndex)
 
 void LCD::WriteByte(GPIO_PinState lcdMode,char byte)
 {
-	//Register select
-	HAL_GPIO_WritePin(rs.port,rs.selectedPin,lcdMode);
+	HAL_GPIO_WritePin(rs.port,rs.selectedPin,lcdMode);//Register select
 	LCD::WriteNibble(byte,HIGH_NIBBLE);
 	LCD::WriteNibble(byte,LOW_NIBBLE);
 }
@@ -112,7 +113,7 @@ void LCD::PrintString(const char* pData)
 
 void LCD::PrintInteger(uint32_t data)
 {
-	char integerToStringBuffer[INT_TO_STR_BUFFER_LEN + 1] = {0};
+	char integerToStringBuffer[intToStrBufferLen + 1] = {0};
 	
 	if(data < 10)
 	{
