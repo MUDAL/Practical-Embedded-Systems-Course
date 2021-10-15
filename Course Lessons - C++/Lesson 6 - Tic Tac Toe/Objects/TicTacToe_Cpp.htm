@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\TicTacToe_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\TicTacToe_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Sep 20 21:01:38 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Oct 15 08:18:08 2021
 <BR><P>
-<H3>Maximum Stack Usage =        392 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        408 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+__rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 <P>
 <H3>
 Functions with no stack information
@@ -83,7 +83,7 @@ Function Pointers
  <LI><a href="#[37]">SPI3_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[45]">SPI4_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[a]">SVC_Handler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
- <LI><a href="#[d]">SysTick_Handler</a> from system.o(i.SysTick_Handler) referenced from startup_stm32f401xe.o(RESET)
+ <LI><a href="#[d]">SysTick_Handler</a> from main.o(i.SysTick_Handler) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[46]">SystemInit</a> from system_stm32f4xx.o(i.SystemInit) referenced from startup_stm32f401xe.o(.text)
  <LI><a href="#[10]">TAMP_STAMP_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[22]">TIM1_BRK_TIM9_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
@@ -99,9 +99,9 @@ Function Pointers
  <LI><a href="#[41]">USART6_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[9]">UsageFault_Handler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[e]">WWDG_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
- <LI><a href="#[4a]">&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForDiagonalWin(char(*)[5])</a> from game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7019CheckForDiagonalWinEPA5_c) referenced from game.o(.data)
- <LI><a href="#[49]">&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForVerticalWin(char(*)[5])</a> from game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7019CheckForVerticalWinEPA5_c) referenced from game.o(.data)
- <LI><a href="#[48]">&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForHorizontalWin(char(*)[5])</a> from game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7021CheckForHorizontalWinEPA5_c) referenced from game.o(.data)
+ <LI><a href="#[4a]">CheckForDiagonalWin(char(*)[5])</a> from game.o(i._Z19CheckForDiagonalWinPA5_c) referenced from game.o(.data)
+ <LI><a href="#[49]">CheckForVerticalWin(char(*)[5])</a> from game.o(i._Z19CheckForVerticalWinPA5_c) referenced from game.o(.data)
+ <LI><a href="#[48]">CheckForHorizontalWin(char(*)[5])</a> from game.o(i._Z21CheckForHorizontalWinPA5_c) referenced from game.o(.data)
  <LI><a href="#[4c]">__main</a> from __main.o(!!!main) referenced from startup_stm32f401xe.o(.text)
 </UL>
 <P>
@@ -222,8 +222,8 @@ Global Symbols
 <P><STRONG><a name="[a4]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[58]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 408 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -551,7 +551,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayRules(LCD&)
@@ -570,7 +570,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7a]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectRow(unsigned char)
 </UL>
 
@@ -589,7 +590,7 @@ Global Symbols
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
+<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[65]"></a>HAL_InitTick</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, stm32f4xx_hal.o(i.HAL_InitTick))
@@ -626,7 +627,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
-<P><STRONG><a name="[d]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system.o(i.SysTick_Handler))
+<P><STRONG><a name="[d]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, main.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
@@ -637,29 +638,21 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
 <P><STRONG><a name="[6c]"></a>Game_Start(LCD&, Keypad&)</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, game.o(i._Z10Game_StartR3LCDR6Keypad))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = Game_Start(LCD&, Keypad&) &rArr; &lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = Game_Start(LCD&, Keypad&) &rArr; DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Clear()
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5])
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _8_game_cpp_218bea70&rang;::UpdateGameBoard(LCD&, char&, char(*)[5])
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayGameBoard(LCD&, char(*)[5])
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateGameBoard(LCD&, char&, char(*)[5])
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayMenu(LCD&)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[74]"></a>System_Init()</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, system.o(i._Z11System_Initv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = System_Init() &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
 <P><STRONG><a name="[72]"></a>Game_DisplayMenu(LCD&)</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, game.o(i._Z16Game_DisplayMenuR3LCD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Game_DisplayMenu(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Game_DisplayMenu(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
@@ -670,7 +663,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[75]"></a>Game_DisplayIntro(LCD&)</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, game.o(i._Z17Game_DisplayIntroR3LCD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Game_DisplayIntro(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Game_DisplayIntro(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
@@ -680,7 +673,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[76]"></a>Game_DisplayRules(LCD&)</STRONG> (Thumb, 170 bytes, Stack size 8 bytes, game.o(i._Z17Game_DisplayRulesR3LCD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Game_DisplayRules(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Game_DisplayRules(LCD&) &rArr; LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
@@ -690,18 +683,27 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[78]"></a>LCD::PrintString(const char*)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD11PrintStringEPKc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[77]"></a>LCD::PrintString(const char*)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD11PrintStringEPKc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
 </UL>
 
-<P><STRONG><a name="[6d]"></a>LCD::Clear()</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lcd.o(i._ZN3LCD5ClearEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD::Clear() &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[79]"></a>LCD::WriteNibble(char, unsigned char)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD11WriteNibbleEch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
+</UL>
+
+<P><STRONG><a name="[6d]"></a>LCD::Clear()</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lcd.o(i._ZN3LCD5ClearEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD::Clear() &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayRules(LCD&)
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayIntro(LCD&)
@@ -710,9 +712,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6f]"></a>LCD::Print(const char*)</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEPKc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayRules(LCD&)
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayIntro(LCD&)
@@ -720,43 +722,43 @@ Global Symbols
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
 </UL>
 
-<P><STRONG><a name="[77]"></a>LCD::Print(char)</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::Print(char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[74]"></a>LCD::Print(char)</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::Print(char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5])
-</UL>
-
-<P><STRONG><a name="[79]"></a>LCD::Write(GPIO_PinState, char)</STRONG> (Thumb, 314 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD5WriteE13GPIO_PinStatec))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Clear()
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayGameBoard(LCD&, char(*)[5])
 </UL>
 
 <P><STRONG><a name="[6e]"></a>LCD::SetCursor(unsigned char, unsigned char)</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD9SetCursorEhh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5])
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayGameBoard(LCD&, char(*)[5])
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayRules(LCD&)
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayIntro(LCD&)
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayMenu(LCD&)
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
 </UL>
 
-<P><STRONG><a name="[7b]"></a>LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)</STRONG> (Thumb, 266 bytes, Stack size 216 bytes, lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[78]"></a>LCD::WriteByte(GPIO_PinState, char)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Clear()
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
+</UL>
+
+<P><STRONG><a name="[7b]"></a>LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)</STRONG> (Thumb, 266 bytes, Stack size 216 bytes, lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -807,8 +809,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[59]"></a>main</STRONG> (Thumb, 246 bytes, Stack size 128 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[59]"></a>main</STRONG> (Thumb, 332 bytes, Stack size 128 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 408<LI>Call Chain = main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::Keypad(pinStruct_t*, pinStruct_t*)
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
@@ -816,8 +818,8 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayRules(LCD&)
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayIntro(LCD&)
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_DisplayMenu(LCD&)
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
@@ -836,33 +838,33 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[73]"></a>&lang;unnamed namespace _8_game_cpp_218bea70&rang;::UpdateGameBoard(LCD&, char&, char(*)[5])</STRONG> (Thumb, 106 bytes, Stack size 20 bytes, game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7015UpdateGameBoardER3LCDRcPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = &lang;unnamed namespace _8_game_cpp_218bea70&rang;::UpdateGameBoard(LCD&, char&, char(*)[5])
+<P><STRONG><a name="[73]"></a>UpdateGameBoard(LCD&, char&, char(*)[5])</STRONG> (Thumb, 106 bytes, Stack size 20 bytes, game.o(i._Z15UpdateGameBoardR3LCDRcPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UpdateGameBoard(LCD&, char&, char(*)[5])
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
 </UL>
 
-<P><STRONG><a name="[70]"></a>&lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5])</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7016DisplayGameBoardER3LCDPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = &lang;unnamed namespace _8_game_cpp_218bea70&rang;::DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[70]"></a>DisplayGameBoard(LCD&, char(*)[5])</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, game.o(i._Z16DisplayGameBoardR3LCDPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
 </UL>
 
-<P><STRONG><a name="[4a]"></a>&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForDiagonalWin(char(*)[5])</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7019CheckForDiagonalWinEPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = &lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForDiagonalWin(char(*)[5])
+<P><STRONG><a name="[4a]"></a>CheckForDiagonalWin(char(*)[5])</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, game.o(i._Z19CheckForDiagonalWinPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CheckForDiagonalWin(char(*)[5])
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> game.o(.data)
 </UL>
-<P><STRONG><a name="[49]"></a>&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForVerticalWin(char(*)[5])</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7019CheckForVerticalWinEPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = &lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForVerticalWin(char(*)[5])
+<P><STRONG><a name="[49]"></a>CheckForVerticalWin(char(*)[5])</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, game.o(i._Z19CheckForVerticalWinPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CheckForVerticalWin(char(*)[5])
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> game.o(.data)
 </UL>
-<P><STRONG><a name="[48]"></a>&lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForHorizontalWin(char(*)[5])</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, game.o(i._ZN31_GLOBAL__N__8_game_cpp_218bea7021CheckForHorizontalWinEPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = &lang;unnamed namespace _8_game_cpp_218bea70&rang;::CheckForHorizontalWin(char(*)[5])
+<P><STRONG><a name="[48]"></a>CheckForHorizontalWin(char(*)[5])</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, game.o(i._Z21CheckForHorizontalWinPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CheckForHorizontalWin(char(*)[5])
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> game.o(.data)
 </UL>

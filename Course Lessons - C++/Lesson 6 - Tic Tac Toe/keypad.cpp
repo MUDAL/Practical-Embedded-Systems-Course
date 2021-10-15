@@ -1,14 +1,11 @@
 #include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "keypad.h"
 
-namespace
-{
-	const char keypadMatrix[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS] =
-	{{'1','2','3','A'},
-	 {'4','5','6','B'},
-	 {'7','8','9','C'},
-	 {'*','0','#','D'}};
-};
+const char keypadMatrix[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS] =
+{{'1','2','3','A'},
+ {'4','5','6','B'},
+ {'7','8','9','C'},
+ {'*','0','#','D'}};
 
 void Keypad::SelectRow(uint8_t pinIndex)
 {

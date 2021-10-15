@@ -8,158 +8,156 @@ namespace Board
 	const uint8_t columnPos = 5;
 };
 
-namespace
+typedef enum
 {
-	typedef enum
-	{
-		PLAYER_1 = 0,
-		PLAYER_2
-	}Player;
-	
-	Player player = PLAYER_1;
-	
-	typedef struct
-	{
-		bool winDetected;
-		char winner;
-	}gameResult_t;
-	
-	void UpdateGameBoard(LCD& lcd,
-											 char& pressedKey,
-											 char gameBoard[Board::numberOfRows]
-																		 [Board::numberOfCols])
-	{
-		bool characterMatch = false;
-	
-		for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
-		{
-			for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex++)
-			{
-				if(pressedKey == gameBoard[rowIndex][colIndex])
-				{
-					switch(player)
-					{
-						case PLAYER_1:
-							gameBoard[rowIndex][colIndex] = 'X';
-							player = PLAYER_2;
-							break;
-						case PLAYER_2:
-							gameBoard[rowIndex][colIndex] = 'O';
-							player = PLAYER_1;
-							break;
-					}
-					characterMatch = true;
-					break; //break inner loop
-				}
-			}
-			if(characterMatch)
-			{//break outer loop
-				break;
-			}
-		}	
-	}
-	
-	void DisplayGameBoard(LCD& lcd,char gameBoard[Board::numberOfRows]
-																							 [Board::numberOfCols])
-	{
-		uint8_t rowPos = 1;
+	PLAYER_1 = 0,
+	PLAYER_2
+}Player;
 
-		for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
-		{
-			lcd.SetCursor(rowPos,Board::columnPos);
-			rowPos++; //move to next row
-			for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex++)
-			{
-				lcd.Print(gameBoard[rowIndex][colIndex]);
-			}
-		}	
-	}
-	
-	gameResult_t CheckForHorizontalWin(char gameBoard[Board::numberOfRows]
-																									 [Board::numberOfCols])
+Player player = PLAYER_1;
+
+typedef struct
+{
+	bool winDetected;
+	char winner;
+}gameResult_t;
+
+static void UpdateGameBoard(LCD& lcd,
+										       char& pressedKey,
+										       char gameBoard[Board::numberOfRows]
+																	       [Board::numberOfCols])
+{
+	bool characterMatch = false;
+
+	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
 	{
-		gameResult_t result = {0};
-		char startOfRow;
-		uint8_t numberOfMatches = 0;
-		
-		for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
+		for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex++)
 		{
-			startOfRow = gameBoard[rowIndex][0];
-			for(uint8_t colIndex = 2; colIndex < Board::numberOfCols; colIndex+=2)
+			if(pressedKey == gameBoard[rowIndex][colIndex])
 			{
-				if(startOfRow == gameBoard[rowIndex][colIndex])
+				switch(player)
 				{
-					numberOfMatches++;
+					case PLAYER_1:
+						gameBoard[rowIndex][colIndex] = 'X';
+						player = PLAYER_2;
+						break;
+					case PLAYER_2:
+						gameBoard[rowIndex][colIndex] = 'O';
+						player = PLAYER_1;
+						break;
 				}
-			}
-			if(numberOfMatches == 2)
-			{
-				result.winDetected = true;
-				result.winner = startOfRow;
-				return result;
-			}
-			else
-			{
-				numberOfMatches = 0;
+				characterMatch = true;
+				break; //break inner loop
 			}
 		}
-		return result;
-	}
-	
-	gameResult_t CheckForVerticalWin(char gameBoard[Board::numberOfRows]
-																								 [Board::numberOfCols])
+		if(characterMatch)
+		{//break outer loop
+			break;
+		}
+	}	
+}
+
+static void DisplayGameBoard(LCD& lcd,
+											       char gameBoard[Board::numberOfRows]
+																		       [Board::numberOfCols])
+{
+	uint8_t rowPos = 1;
+
+	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
 	{
-		gameResult_t result = {0};
-		char startOfColumn;
-		uint8_t numberOfMatches = 0;
-		
-		for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex+=2)
+		lcd.SetCursor(rowPos,Board::columnPos);
+		rowPos++; //move to next row
+		for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex++)
 		{
-			startOfColumn = gameBoard[0][colIndex];
-			for(uint8_t rowIndex = 1; rowIndex < Board::numberOfRows; rowIndex++)
+			lcd.Print(gameBoard[rowIndex][colIndex]);
+		}
+	}	
+}
+
+static gameResult_t CheckForHorizontalWin(char gameBoard[Board::numberOfRows]
+																								        [Board::numberOfCols])
+{
+	gameResult_t result = {0};
+	char startOfRow;
+	uint8_t numberOfMatches = 0;
+	
+	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
+	{
+		startOfRow = gameBoard[rowIndex][0];
+		for(uint8_t colIndex = 2; colIndex < Board::numberOfCols; colIndex+=2)
+		{
+			if(startOfRow == gameBoard[rowIndex][colIndex])
 			{
-				if(startOfColumn == gameBoard[rowIndex][colIndex])
-				{
-					numberOfMatches++;
-				}
-			}
-			if(numberOfMatches == 2)
-			{
-				result.winDetected = true;
-				result.winner = startOfColumn;
-				return result;
-			}
-			else
-			{
-				numberOfMatches = 0;
+				numberOfMatches++;
 			}
 		}
-		return result;	
-	}
-	
-	gameResult_t CheckForDiagonalWin(char gameBoard[Board::numberOfRows]
-																								 [Board::numberOfCols])
-	{
-		gameResult_t result = {0};
-		//Back slash diagonal
-		if((gameBoard[0][0] == gameBoard[1][2])&&(gameBoard[0][0] == gameBoard[2][4]))
+		if(numberOfMatches == 2)
 		{
 			result.winDetected = true;
-			result.winner = gameBoard[0][0];
+			result.winner = startOfRow;
 			return result;
 		}
-		//Forward slash diagonal
-		if((gameBoard[0][4] == gameBoard[1][2])&&(gameBoard[0][4] == gameBoard[2][0]))
+		else
+		{
+			numberOfMatches = 0;
+		}
+	}
+	return result;
+}
+
+static gameResult_t CheckForVerticalWin(char gameBoard[Board::numberOfRows]
+																							        [Board::numberOfCols])
+{
+	gameResult_t result = {0};
+	char startOfColumn;
+	uint8_t numberOfMatches = 0;
+	
+	for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex+=2)
+	{
+		startOfColumn = gameBoard[0][colIndex];
+		for(uint8_t rowIndex = 1; rowIndex < Board::numberOfRows; rowIndex++)
+		{
+			if(startOfColumn == gameBoard[rowIndex][colIndex])
+			{
+				numberOfMatches++;
+			}
+		}
+		if(numberOfMatches == 2)
 		{
 			result.winDetected = true;
-			result.winner = gameBoard[0][4];
+			result.winner = startOfColumn;
 			return result;
 		}
+		else
+		{
+			numberOfMatches = 0;
+		}
+	}
+	return result;	
+}
+
+static gameResult_t CheckForDiagonalWin(char gameBoard[Board::numberOfRows]
+																							        [Board::numberOfCols])
+{
+	gameResult_t result = {0};
+	//Back slash diagonal
+	if((gameBoard[0][0] == gameBoard[1][2])&&(gameBoard[0][0] == gameBoard[2][4]))
+	{
+		result.winDetected = true;
+		result.winner = gameBoard[0][0];
 		return result;
 	}
-	
-};
+	//Forward slash diagonal
+	if((gameBoard[0][4] == gameBoard[1][2])&&(gameBoard[0][4] == gameBoard[2][0]))
+	{
+		result.winDetected = true;
+		result.winner = gameBoard[0][4];
+		return result;
+	}
+	return result;
+}
 
+//Extern functions
 void Game_DisplayIntro(LCD& lcd)
 {
 	lcd.Clear();

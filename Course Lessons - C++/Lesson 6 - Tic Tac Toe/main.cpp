@@ -1,10 +1,14 @@
 #include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
-#include "system.h"
 #include "game.h"
 
 int main(void)
 {
-	//Variables
+	HAL_Init();
+	  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();	
+	
 	pinStruct_t rowPins[NUMBER_OF_ROWS] =
 	{
 		{GPIOC,GPIO_PIN_6},
@@ -27,8 +31,6 @@ int main(void)
 	pinStruct_t d6 = {GPIOC,GPIO_PIN_4};
 	pinStruct_t d7 = {GPIOC,GPIO_PIN_5};
 	
-	//Initializations
-	System_Init();
 	static Keypad keypad(rowPins,columnPins);
 	static LCD lcd(rs,en,d4,d5,d6,d7);
 	
@@ -55,3 +57,9 @@ int main(void)
 		}
 	}
 }	
+
+extern "C" void SysTick_Handler(void)
+{
+  HAL_IncTick();
+}
+

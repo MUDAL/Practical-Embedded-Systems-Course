@@ -1,7 +1,6 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
 ".\objects\game.o"
-".\objects\system.o"
 ".\objects\keypad.o"
 ".\objects\lcd.o"
 ".\objects\stm32f4xx_hal.o"

@@ -394,16 +394,6 @@
           <GroupName>Lib</GroupName>
           <Files>
             <File>
-              <FileName>system.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\system.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>system.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\system.h</FilePath>
-            </File>
-            <File>
               <FileName>bme280.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\bme280.cpp</FilePath>
