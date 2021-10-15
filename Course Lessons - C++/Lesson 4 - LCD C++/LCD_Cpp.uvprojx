@@ -394,16 +394,6 @@
           <GroupName>Lib</GroupName>
           <Files>
             <File>
-              <FileName>system.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\system.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>system.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\system.h</FilePath>
-            </File>
-            <File>
               <FileName>lcd.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\lcd.cpp</FilePath>
