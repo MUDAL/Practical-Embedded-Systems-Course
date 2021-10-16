@@ -13,7 +13,7 @@ int main(void)
 	pinStruct_t d6 = {GPIOC,GPIO_PIN_4};
 	pinStruct_t d7 = {GPIOC,GPIO_PIN_5};
 		
-	LCD lcd(rs,en,d4,d5,d6,d7);
+	static LCD lcd(rs,en,d4,d5,d6,d7);
 	
 	lcd.Print("I love football");
 	HAL_Delay(1000);
@@ -26,6 +26,7 @@ int main(void)
 	lcd.Print(number);
 	HAL_Delay(1000);
 	uint32_t var = 0;
+	
 	while(1)
 	{
 		lcd.SetCursor(0,0);
