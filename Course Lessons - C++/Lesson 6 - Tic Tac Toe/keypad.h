@@ -11,6 +11,7 @@ class Keypad
 	private:
 		pinStruct_t* pRow;
 		pinStruct_t* pCol;
+		bool pinPrevPressed[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS];
 		void SelectRow(uint8_t pinIndex);
 		bool IsDebounced(pinStruct_t* pCol);
 	

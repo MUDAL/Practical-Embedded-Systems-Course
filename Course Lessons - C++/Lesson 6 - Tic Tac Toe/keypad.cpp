@@ -41,6 +41,13 @@ Keypad::Keypad(pinStruct_t* pRowPins,pinStruct_t* pColumnPins)
 	GPIO_InitTypeDef columnPinInitStruct[NUMBER_OF_COLUMNS];
 	pRow = pRowPins;
 	pCol = pColumnPins;
+	for(uint8_t i = 0; i < NUMBER_OF_ROWS; i++)
+	{
+		for(uint8_t j = 0; j < NUMBER_OF_COLUMNS; j++)
+		{
+			pinPrevPressed[i][j] = false;
+		}
+	}
 	//Initialize rows
 	for(uint8_t i = 0; i < NUMBER_OF_ROWS; i++)
 	{
@@ -59,9 +66,7 @@ Keypad::Keypad(pinStruct_t* pRowPins,pinStruct_t* pColumnPins)
 }
 
 char Keypad::GetCharShortPress(void)
-{
-	static bool pinPrevPressed[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS];
-	
+{	
 	for(uint8_t i = 0; i < NUMBER_OF_ROWS; i++)
 	{
 		Keypad::SelectRow(i);
