@@ -15,7 +15,7 @@ int main(void)
 		
 	static LCD lcd(rs,en,d4,d5,d6,d7);
 	
-	lcd.Print("I love football");
+	lcd.Print("I like football");
 	HAL_Delay(1000);
 	lcd.Clear();
 	lcd.Print("Go home!!!!!!");

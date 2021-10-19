@@ -71,13 +71,6 @@ void LCD::WriteNibble(char byte,uint8_t nibbleBitPos)
 		nibbleArr[j] = (byte&(1<<i))>>i;
 		j++;
 	}
-	//Clear data pins
-	for(uint8_t i = 0; i < 4; i++)
-	{
-		HAL_GPIO_WritePin(dataPins[i].port,
-									    dataPins[i].selectedPin,
-											GPIO_PIN_RESET);
-	}
 	//Send nibble
 	for(uint8_t i = 0; i < 4; i++)
 	{
