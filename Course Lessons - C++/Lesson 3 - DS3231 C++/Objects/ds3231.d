@@ -1,4 +1,6 @@
 .\objects\ds3231.o: ds3231.cpp
+.\objects\ds3231.o: ds3231.h
+.\objects\ds3231.o: pinmap.h
 .\objects\ds3231.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\ds3231.o: .\RTE\Device\STM32F401RETx\stm32f4xx_hal_conf.h
 .\objects\ds3231.o: .\RTE\_stm32f401re\RTE_Components.h
@@ -28,5 +30,3 @@
 .\objects\ds3231.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h
 .\objects\ds3231.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\objects\ds3231.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
-.\objects\ds3231.o: ds3231.h
-.\objects\ds3231.o: pinmap.h

@@ -1,4 +1,3 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "bme280.h"
 
 enum RegisterAddresses

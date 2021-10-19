@@ -1,4 +1,6 @@
 .\objects\lcd.o: lcd.cpp
+.\objects\lcd.o: lcd.h
+.\objects\lcd.o: pinmap.h
 .\objects\lcd.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\lcd.o: .\RTE\Device\STM32F401RETx\stm32f4xx_hal_conf.h
 .\objects\lcd.o: .\RTE\_stm32f401re\RTE_Components.h
@@ -28,5 +30,3 @@
 .\objects\lcd.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h
 .\objects\lcd.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\objects\lcd.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
-.\objects\lcd.o: lcd.h
-.\objects\lcd.o: pinmap.h

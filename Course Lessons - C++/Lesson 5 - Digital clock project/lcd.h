@@ -3,17 +3,16 @@
 
 #include "pinmap.h"
 
-#define INT_TO_STR_BUFFER_LEN	2
-
 class LCD
 {
 	private:
 		pinStruct_t rs;
 		pinStruct_t en; 
 		pinStruct_t dataPins[4];
-		void Write(GPIO_PinState lcdMode,char byte);
-		void PrintString(const char* pData);
-		void PrintInteger(uint32_t data);
+		void WriteNibble(char byte,uint8_t nibbleBitPos);
+		void WriteByte(GPIO_PinState lcdMode,char byte);
+		void WriteBytes(const char* pData);
+		void WriteInteger(uint32_t data);
 	
 	public:
 		LCD(pinStruct_t& RS,

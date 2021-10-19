@@ -1,4 +1,3 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "keypad.h"
 
 const char keypadMatrix[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS] =

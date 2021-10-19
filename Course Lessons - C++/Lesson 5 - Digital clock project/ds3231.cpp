@@ -1,38 +1,34 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "ds3231.h"
 
-namespace
+enum RegisterAddresses
 {
-	enum RegisterAddresses
-	{
-		DS3231_ADDR = 0x68,
-		SEC_REG_ADDR = 0x00,
-		MIN_REG_ADDR = 0x01,
-		HOUR_REG_ADDR = 0x02
-	};
-	
-	const uint8_t I2C_HAL_TIMEOUT = 2;
-	
-	uint8_t BCD_To_Hex(uint8_t bcd)
-	{
-		uint8_t hex;
-		hex = (((bcd & 0xF0)>>4)*10) + (bcd&0x0F);
-		return hex;
-	}
-	
-	uint8_t Hex_To_BCD(uint8_t hex)
-	{
-		uint8_t bcd;
-		uint8_t multipleOfTen = 0;
-		while (hex >= 10)
-		{
-			hex -= 10;
-			multipleOfTen++;
-		}
-		bcd = ((multipleOfTen<<4) | hex);
-		return bcd;
-	}
+	DS3231_ADDR = 0x68,
+	SEC_REG_ADDR = 0x00,
+	MIN_REG_ADDR = 0x01,
+	HOUR_REG_ADDR = 0x02
 };
+
+const uint8_t I2C_HAL_TIMEOUT = 2;
+
+static uint8_t BCD_To_Hex(uint8_t bcd)
+{
+	uint8_t hex;
+	hex = (((bcd & 0xF0)>>4)*10) + (bcd&0x0F);
+	return hex;
+}
+
+static uint8_t Hex_To_BCD(uint8_t hex)
+{
+	uint8_t bcd;
+	uint8_t multipleOfTen = 0;
+	while (hex >= 10)
+	{
+		hex -= 10;
+		multipleOfTen++;
+	}
+	bcd = ((multipleOfTen<<4) | hex);
+	return bcd;
+}
 
 DS3231::DS3231(I2C_TypeDef* I2Cx,pinStruct_t& i2cPin1,pinStruct_t& i2cPin2)
 {

@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\DigitalClock_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\DigitalClock_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Sep 20 21:20:41 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Oct 19 16:30:59 2021
 <BR><P>
-<H3>Maximum Stack Usage =        280 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+__rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 <P>
 <H3>
 Functions with no stack information
@@ -83,7 +83,7 @@ Function Pointers
  <LI><a href="#[37]">SPI3_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[45]">SPI4_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[a]">SVC_Handler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
- <LI><a href="#[d]">SysTick_Handler</a> from system.o(i.SysTick_Handler) referenced from startup_stm32f401xe.o(RESET)
+ <LI><a href="#[d]">SysTick_Handler</a> from main.o(i.SysTick_Handler) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[46]">SystemInit</a> from system_stm32f4xx.o(i.SystemInit) referenced from startup_stm32f401xe.o(.text)
  <LI><a href="#[10]">TAMP_STAMP_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[22]">TIM1_BRK_TIM9_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
@@ -219,8 +219,8 @@ Global Symbols
 <P><STRONG><a name="[ae]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[55]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 360 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -538,7 +538,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
 </UL>
 
@@ -550,8 +550,9 @@ Global Symbols
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
 </UL>
 
-<P><STRONG><a name="[7f]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<P><STRONG><a name="[7a]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
 </UL>
 
 <P><STRONG><a name="[5f]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
@@ -619,7 +620,7 @@ Global Symbols
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
+<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[6d]"></a>HAL_InitTick</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, stm32f4xx_hal.o(i.HAL_InitTick))
@@ -668,7 +669,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
-<P><STRONG><a name="[d]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system.o(i.SysTick_Handler))
+<P><STRONG><a name="[d]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, main.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
@@ -678,83 +679,84 @@ Global Symbols
 <P><STRONG><a name="[46]"></a>SystemInit</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, system_stm32f4xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
-<P><STRONG><a name="[77]"></a>System_Init()</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, system.o(i._Z11System_Initv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = System_Init() &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+<P><STRONG><a name="[77]"></a>LCD::WriteBytes(const char*)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD10WriteBytesEPKc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::WriteBytes(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[78]"></a>LCD::PrintString(const char*)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD11PrintStringEPKc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
-</UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteInteger(unsigned)
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
 </UL>
 
-<P><STRONG><a name="[7a]"></a>LCD::PrintInteger(unsigned)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD12PrintIntegerEj))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[79]"></a>LCD::WriteNibble(char, unsigned char)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD11WriteNibbleEch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _7_lcd_cpp_7e8cd9ce&rang;::IntegerToString(unsigned, char*)
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
+</UL>
+
+<P><STRONG><a name="[7b]"></a>LCD::WriteInteger(unsigned)</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD12WriteIntegerEj))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = LCD::WriteInteger(unsigned) &rArr; LCD::WriteBytes(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteBytes(const char*)
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntegerToString(unsigned, char*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(unsigned char&)
 </UL>
 
 <P><STRONG><a name="[7d]"></a>LCD::Print(const char*)</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEPKc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::Print(const char*) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD::Print(const char*) &rArr; LCD::WriteBytes(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteBytes(const char*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[7e]"></a>LCD::Print(unsigned char&)</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintERh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD::Print(unsigned char&) &rArr; LCD::PrintInteger(unsigned) &rArr; LCD::PrintString(const char*) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = LCD::Print(unsigned char&) &rArr; LCD::WriteInteger(unsigned) &rArr; LCD::WriteBytes(const char*) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteInteger(unsigned)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7b]"></a>LCD::Print(char)</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::Print(char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[7f]"></a>LCD::Print(char)</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD5PrintEc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::Print(char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[79]"></a>LCD::Write(GPIO_PinState, char)</STRONG> (Thumb, 314 bytes, Stack size 32 bytes, lcd.o(i._ZN3LCD5WriteE13GPIO_PinStatec))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintString(const char*)
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[80]"></a>LCD::SetCursor(unsigned char, unsigned char)</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD9SetCursorEhh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
+<P><STRONG><a name="[78]"></a>LCD::WriteByte(GPIO_PinState, char)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteNibble(char, unsigned char)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteInteger(unsigned)
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteBytes(const char*)
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+</UL>
+
 <P><STRONG><a name="[81]"></a>LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)</STRONG> (Thumb, 266 bytes, Stack size 216 bytes, lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Write(GPIO_PinState, char)
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteByte(GPIO_PinState, char)
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
@@ -775,7 +777,7 @@ Global Symbols
 <P><STRONG><a name="[85]"></a>BME280::BME280(I2C_TypeDef*, pinStruct_t&, pinStruct_t&)</STRONG> (Thumb, 158 bytes, Stack size 72 bytes, bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = BME280::BME280(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::BME280_StoreCompensationParameters(unsigned char*, unsigned char*, &lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::bme280CompParam_t*)
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BME280_StoreCompensationParameters(unsigned char*, unsigned char*, bme280CompParam_t*)
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -790,7 +792,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = DS3231::GetTime() &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _10_ds3231_cpp_12e75990&rang;::BCD_To_Hex(unsigned char)
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BCD_To_Hex(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -800,7 +802,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;&lang;unnamed namespace _10_ds3231_cpp_12e75990&rang;::Hex_To_BCD(unsigned char)
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hex_To_BCD(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -830,8 +832,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[56]"></a>main</STRONG> (Thumb, 362 bytes, Stack size 16 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::Write(GPIO_PinState, char) &rArr; HAL_Delay
+<P><STRONG><a name="[56]"></a>main</STRONG> (Thumb, 560 bytes, Stack size 80 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = main &rArr; LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS3231::DS3231(I2C_TypeDef*, pinStruct_t&, pinStruct_t&)
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS3231::SetFormat(unsigned char)
@@ -841,10 +843,10 @@ Global Symbols
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BME280::GetData()
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&)
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(unsigned char&)
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init()
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
@@ -861,24 +863,24 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[88]"></a>&lang;unnamed namespace _10_ds3231_cpp_12e75990&rang;::BCD_To_Hex(unsigned char)</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, ds3231.o(i._ZN34_GLOBAL__N__10_ds3231_cpp_12e7599010BCD_To_HexEh))
+<P><STRONG><a name="[88]"></a>BCD_To_Hex(unsigned char)</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, ds3231.o(i._Z10BCD_To_Hexh))
 <BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS3231::GetTime()
 </UL>
 
-<P><STRONG><a name="[8a]"></a>&lang;unnamed namespace _10_ds3231_cpp_12e75990&rang;::Hex_To_BCD(unsigned char)</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ds3231.o(i._ZN34_GLOBAL__N__10_ds3231_cpp_12e7599010Hex_To_BCDEh))
+<P><STRONG><a name="[8a]"></a>Hex_To_BCD(unsigned char)</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ds3231.o(i._Z10Hex_To_BCDh))
 <BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS3231::SetTime(unsigned char, unsigned char)
 </UL>
 
-<P><STRONG><a name="[86]"></a>&lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::BME280_StoreCompensationParameters(unsigned char*, unsigned char*, &lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::bme280CompParam_t*)</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, bme280.o(i._ZN34_GLOBAL__N__10_bme280_cpp_ef44f6fd34BME280_StoreCompensationParametersEPhS0_PNS_17bme280CompParam_tE))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = &lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::BME280_StoreCompensationParameters(unsigned char*, unsigned char*, &lang;unnamed namespace _10_bme280_cpp_ef44f6fd&rang;::bme280CompParam_t*)
+<P><STRONG><a name="[86]"></a>BME280_StoreCompensationParameters(unsigned char*, unsigned char*, bme280CompParam_t*)</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, bme280.o(i._Z34BME280_StoreCompensationParametersPhS_P17bme280CompParam_t))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = BME280_StoreCompensationParameters(unsigned char*, unsigned char*, bme280CompParam_t*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BME280::BME280(I2C_TypeDef*, pinStruct_t&, pinStruct_t&)
 </UL>
 
-<P><STRONG><a name="[7c]"></a>&lang;unnamed namespace _7_lcd_cpp_7e8cd9ce&rang;::IntegerToString(unsigned, char*)</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, lcd.o(i._ZN30_GLOBAL__N__7_lcd_cpp_7e8cd9ce15IntegerToStringEjPc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = &lang;unnamed namespace _7_lcd_cpp_7e8cd9ce&rang;::IntegerToString(unsigned, char*)
+<P><STRONG><a name="[7c]"></a>IntegerToString(unsigned, char*)</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, lcd.o(i._Z15IntegerToStringjPc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = IntegerToString(unsigned, char*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::PrintInteger(unsigned)
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::WriteInteger(unsigned)
 </UL>
 
 <P><STRONG><a name="[71]"></a>__NVIC_GetPriorityGrouping</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping))

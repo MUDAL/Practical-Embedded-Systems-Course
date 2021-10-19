@@ -1,6 +1,5 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
-".\objects\system.o"
 ".\objects\ds3231.o"
 ".\objects\bme280.o"
 ".\objects\lcd.o"

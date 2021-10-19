@@ -1,26 +1,27 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
-#include "system.h"
 #include "ds3231.h"
 #include "bme280.h"
 #include "lcd.h"
 
 int main(void)
 {
+	HAL_Init();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+	__HAL_RCC_I2C1_CLK_ENABLE();
+	
 	//Variables
-	static pinStruct_t scl = {GPIOB,GPIO_PIN_8};
-	static pinStruct_t sda = {GPIOB,GPIO_PIN_9};
-	static pinStruct_t rs = {GPIOC,GPIO_PIN_0};
-	static pinStruct_t en = {GPIOC,GPIO_PIN_1};
-	static pinStruct_t d4 = {GPIOC,GPIO_PIN_2};
-	static pinStruct_t d5 = {GPIOC,GPIO_PIN_3};
-	static pinStruct_t d6 = {GPIOC,GPIO_PIN_4};
-	static pinStruct_t d7 = {GPIOC,GPIO_PIN_5};
+	pinStruct_t scl = {GPIOB,GPIO_PIN_8};
+	pinStruct_t sda = {GPIOB,GPIO_PIN_9};
+	pinStruct_t rs = {GPIOC,GPIO_PIN_0};
+	pinStruct_t en = {GPIOC,GPIO_PIN_1};
+	pinStruct_t d4 = {GPIOC,GPIO_PIN_2};
+	pinStruct_t d5 = {GPIOC,GPIO_PIN_3};
+	pinStruct_t d6 = {GPIOC,GPIO_PIN_4};
+	pinStruct_t d7 = {GPIOC,GPIO_PIN_5};
 	
 	static time_t time;
 	static bme280Data_t bme280Data;
-	
-	//Initializations
-	System_Init();
 	static DS3231 ds3231(I2C1,scl,sda);
 	static BME280 bme280(I2C1,scl,sda);
 	static LCD lcd(rs,en,d4,d5,d6,d7);
@@ -63,3 +64,9 @@ int main(void)
 		lcd.Print(bme280Data.humidity);
 	}
 }
+
+extern "C" void SysTick_Handler(void)
+{
+  HAL_IncTick();
+}
+

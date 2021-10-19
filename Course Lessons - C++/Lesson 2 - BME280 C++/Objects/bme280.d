@@ -1,4 +1,6 @@
 .\objects\bme280.o: bme280.cpp
+.\objects\bme280.o: bme280.h
+.\objects\bme280.o: pinmap.h
 .\objects\bme280.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\bme280.o: .\RTE\Device\STM32F401RETx\stm32f4xx_hal_conf.h
 .\objects\bme280.o: .\RTE\_stm32f401re\RTE_Components.h
@@ -28,5 +30,3 @@
 .\objects\bme280.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h
 .\objects\bme280.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\objects\bme280.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
-.\objects\bme280.o: bme280.h
-.\objects\bme280.o: pinmap.h

@@ -1,5 +1,3 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
-#include "pinmap.h"
 #include "button.h"
 
 bool Button::IsDebounced(void)

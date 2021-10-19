@@ -1,6 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "pinmap.h"
+
 class Button
 {
 	private:

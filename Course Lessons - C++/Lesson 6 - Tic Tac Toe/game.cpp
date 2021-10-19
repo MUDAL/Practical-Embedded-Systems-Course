@@ -1,4 +1,3 @@
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "game.h"
 
 namespace Board
@@ -23,9 +22,9 @@ typedef struct
 }gameResult_t;
 
 static void UpdateGameBoard(LCD& lcd,
-										       char& pressedKey,
-										       char gameBoard[Board::numberOfRows]
-																	       [Board::numberOfCols])
+										        char& pressedKey,
+										        char gameBoard[Board::numberOfRows]
+																	        [Board::numberOfCols])
 {
 	bool characterMatch = false;
 
