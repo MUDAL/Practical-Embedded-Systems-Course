@@ -99,7 +99,7 @@ void LCD::WriteByte(GPIO_PinState lcdMode,char byte)
 	LCD::WriteNibble(byte,LOW_NIBBLE);
 }
 
-void LCD::PrintString(const char* pData)
+void LCD::WriteBytes(const char* pData)
 {
 	while(*pData != '\0')
 	{
@@ -108,7 +108,7 @@ void LCD::PrintString(const char* pData)
 	}	
 }
 
-void LCD::PrintInteger(uint32_t data)
+void LCD::WriteInteger(uint32_t data)
 {
 	const uint8_t maxNumberOfDigits = 10;
 	char integerToStringBuffer[maxNumberOfDigits + 1] = {0};
@@ -118,7 +118,7 @@ void LCD::PrintInteger(uint32_t data)
 		LCD::WriteByte(GPIO_PIN_SET,'0');
 	}
 	IntegerToString(data,integerToStringBuffer);
-	LCD::PrintString(integerToStringBuffer);		
+	LCD::WriteBytes(integerToStringBuffer);		
 }
 
 LCD::LCD(pinStruct_t& RS,
@@ -187,22 +187,22 @@ void LCD::Print(char data)
 
 void LCD::Print(const char* pData)
 {
-	LCD::PrintString(pData);
+	LCD::WriteBytes(pData);
 }
 
 void LCD::Print(uint8_t& data)
 {
-	LCD::PrintInteger(data);
+	LCD::WriteInteger(data);
 }
 
 void LCD::Print(uint16_t& data)
 {
-	LCD::PrintInteger(data);
+	LCD::WriteInteger(data);
 }
 
 void LCD::Print(uint32_t& data)
 {
-	LCD::PrintInteger(data);
+	LCD::WriteInteger(data);
 }
 	
 void LCD::Clear(void)

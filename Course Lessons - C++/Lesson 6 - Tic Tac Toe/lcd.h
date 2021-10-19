@@ -11,8 +11,8 @@ class LCD
 		pinStruct_t dataPins[4];
 		void WriteNibble(char byte,uint8_t nibbleBitPos);
 		void WriteByte(GPIO_PinState lcdMode,char byte);
-		void PrintString(const char* pData);
-		void PrintInteger(uint32_t data);
+		void WriteBytes(const char* pData);
+		void WriteInteger(uint32_t data);
 	
 	public:
 		LCD(pinStruct_t& RS,
