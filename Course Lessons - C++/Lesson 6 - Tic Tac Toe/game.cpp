@@ -4,7 +4,6 @@ namespace Board
 {
 	const uint8_t numberOfRows = 3;
 	const uint8_t numberOfCols = 5;
-	const uint8_t columnPos = 5;
 };
 
 typedef enum
@@ -61,10 +60,11 @@ static void DisplayGameBoard(LCD& lcd,
 																		       [Board::numberOfCols])
 {
 	uint8_t rowPos = 1;
-
+	const uint8_t startingColumnPos = 5;
+	
 	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
 	{
-		lcd.SetCursor(rowPos,Board::columnPos);
+		lcd.SetCursor(rowPos,startingColumnPos);
 		rowPos++; //move to next row
 		for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex++)
 		{
@@ -78,7 +78,7 @@ static gameResult_t CheckForHorizontalWin(char gameBoard[Board::numberOfRows]
 {
 	gameResult_t result = {0};
 	char startOfRow;
-	uint8_t numberOfMatches = 0;
+	uint8_t numberOfMatchingPlayerInputs = 0; 
 	
 	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
 	{
@@ -87,10 +87,10 @@ static gameResult_t CheckForHorizontalWin(char gameBoard[Board::numberOfRows]
 		{
 			if(startOfRow == gameBoard[rowIndex][colIndex])
 			{
-				numberOfMatches++;
+				numberOfMatchingPlayerInputs++;
 			}
 		}
-		if(numberOfMatches == 2)
+		if(numberOfMatchingPlayerInputs == 2)
 		{
 			result.winDetected = true;
 			result.winner = startOfRow;
@@ -98,7 +98,7 @@ static gameResult_t CheckForHorizontalWin(char gameBoard[Board::numberOfRows]
 		}
 		else
 		{
-			numberOfMatches = 0;
+			numberOfMatchingPlayerInputs = 0;
 		}
 	}
 	return result;
@@ -109,7 +109,7 @@ static gameResult_t CheckForVerticalWin(char gameBoard[Board::numberOfRows]
 {
 	gameResult_t result = {0};
 	char startOfColumn;
-	uint8_t numberOfMatches = 0;
+	uint8_t numberOfMatchingPlayerInputs = 0;
 	
 	for(uint8_t colIndex = 0; colIndex < Board::numberOfCols; colIndex+=2)
 	{
@@ -118,10 +118,10 @@ static gameResult_t CheckForVerticalWin(char gameBoard[Board::numberOfRows]
 		{
 			if(startOfColumn == gameBoard[rowIndex][colIndex])
 			{
-				numberOfMatches++;
+				numberOfMatchingPlayerInputs++;
 			}
 		}
-		if(numberOfMatches == 2)
+		if(numberOfMatchingPlayerInputs == 2)
 		{
 			result.winDetected = true;
 			result.winner = startOfColumn;
@@ -129,7 +129,7 @@ static gameResult_t CheckForVerticalWin(char gameBoard[Board::numberOfRows]
 		}
 		else
 		{
-			numberOfMatches = 0;
+			numberOfMatchingPlayerInputs = 0;
 		}
 	}
 	return result;	
