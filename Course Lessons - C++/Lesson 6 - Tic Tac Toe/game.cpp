@@ -25,7 +25,7 @@ static void UpdateGameBoard(LCD& lcd,
 										        char gameBoard[Board::numberOfRows]
 																	        [Board::numberOfCols])
 {
-	bool characterMatch = false;
+	bool playerMadeAnInput = false;
 
 	for(uint8_t rowIndex = 0; rowIndex < Board::numberOfRows; rowIndex++)
 	{
@@ -44,11 +44,11 @@ static void UpdateGameBoard(LCD& lcd,
 						player = PLAYER_1;
 						break;
 				}
-				characterMatch = true;
+				playerMadeAnInput = true;
 				break; //break inner loop
 			}
 		}
-		if(characterMatch)
+		if(playerMadeAnInput)
 		{//break outer loop
 			break;
 		}
