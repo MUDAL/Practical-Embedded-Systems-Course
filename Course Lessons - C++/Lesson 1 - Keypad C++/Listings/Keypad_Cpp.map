@@ -15,18 +15,18 @@ Section Cross References
     main.o(i.main) refers to main.o(.bss) for keypad
     main.o(.ARM.exidx) refers to main.o(i.main) for i.main
     main.o(.ARM.exidx) refers to main.o(i.SysTick_Handler) for i.SysTick_Handler
-    keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
-    keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t) refers to stm32f4xx_hal.o(i.HAL_Delay) for HAL_Delay
+    keypad.o(i._ZN6Keypad11IsDebouncedEh) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+    keypad.o(i._ZN6Keypad11IsDebouncedEh) refers to stm32f4xx_hal.o(i.HAL_Delay) for HAL_Delay
     keypad.o(i._ZN6Keypad16GetCharLongPressEv) refers to keypad.o(i._ZN6Keypad9SelectRowEh) for Keypad::SelectRow(unsigned char)
     keypad.o(i._ZN6Keypad16GetCharLongPressEv) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     keypad.o(i._ZN6Keypad16GetCharLongPressEv) refers to keypad.o(.constdata) for keypadMatrix
     keypad.o(i._ZN6Keypad17GetCharShortPressEv) refers to keypad.o(i._ZN6Keypad9SelectRowEh) for Keypad::SelectRow(unsigned char)
-    keypad.o(i._ZN6Keypad17GetCharShortPressEv) refers to keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t) for Keypad::IsDebounced(pinStruct_t*)
+    keypad.o(i._ZN6Keypad17GetCharShortPressEv) refers to keypad.o(i._ZN6Keypad11IsDebouncedEh) for Keypad::IsDebounced(unsigned char)
     keypad.o(i._ZN6Keypad17GetCharShortPressEv) refers to keypad.o(.constdata) for keypadMatrix
     keypad.o(i._ZN6Keypad9SelectRowEh) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
     keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6Keypad9SelectRowEh) for i._ZN6Keypad9SelectRowEh
-    keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t) for i._ZN6Keypad11IsDebouncedEP11pinStruct_t
+    keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6Keypad11IsDebouncedEh) for i._ZN6Keypad11IsDebouncedEh
     keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_) for i._ZN6KeypadC1EP11pinStruct_tS1_
     keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6Keypad17GetCharShortPressEv) for i._ZN6Keypad17GetCharShortPressEv
     keypad.o(.ARM.exidx) refers to keypad.o(i._ZN6Keypad16GetCharLongPressEv) for i._ZN6Keypad16GetCharLongPressEv
@@ -494,21 +494,21 @@ Image Symbol Table
     i.HAL_SYSTICK_Config                     0x080006b4   Section        0  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
     i.SysTick_Handler                        0x080006e8   Section        0  main.o(i.SysTick_Handler)
     i.SystemInit                             0x080006f0   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i._ZN6Keypad11IsDebouncedEP11pinStruct_t 0x0800070c   Section        0  keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t)
-    i._ZN6Keypad17GetCharShortPressEv        0x08000734   Section        0  keypad.o(i._ZN6Keypad17GetCharShortPressEv)
-    i._ZN6Keypad9SelectRowEh                 0x080007b8   Section        0  keypad.o(i._ZN6Keypad9SelectRowEh)
-    i._ZN6KeypadC1EP11pinStruct_tS1_         0x080007fa   Section        0  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
-    i.__NVIC_GetPriorityGrouping             0x080008bc   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    __NVIC_GetPriorityGrouping               0x080008bd   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    i.__NVIC_SetPriority                     0x080008cc   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x080008cd   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__cxa_guard_acquire                    0x080008f4   Section        0  cxa_guard_acquire.o(i.__cxa_guard_acquire)
-    i.main                                   0x08000904   Section        0  main.o(i.main)
-    x$fpl$fpinit                             0x080009ec   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x080009ec   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x080009f8   Section       64  main.o(.constdata)
-    .constdata                               0x08000a38   Section       16  keypad.o(.constdata)
-    keypadMatrix                             0x08000a38   Data          16  keypad.o(.constdata)
+    i._ZN6Keypad11IsDebouncedEh              0x0800070c   Section        0  keypad.o(i._ZN6Keypad11IsDebouncedEh)
+    i._ZN6Keypad17GetCharShortPressEv        0x08000748   Section        0  keypad.o(i._ZN6Keypad17GetCharShortPressEv)
+    i._ZN6Keypad9SelectRowEh                 0x080007c4   Section        0  keypad.o(i._ZN6Keypad9SelectRowEh)
+    i._ZN6KeypadC1EP11pinStruct_tS1_         0x08000806   Section        0  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
+    i.__NVIC_GetPriorityGrouping             0x080008c8   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x080008c9   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x080008d8   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080008d9   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__cxa_guard_acquire                    0x08000900   Section        0  cxa_guard_acquire.o(i.__cxa_guard_acquire)
+    i.main                                   0x08000910   Section        0  main.o(i.main)
+    x$fpl$fpinit                             0x080009f8   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x080009f8   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x08000a04   Section       64  main.o(.constdata)
+    .constdata                               0x08000a44   Section       16  keypad.o(.constdata)
+    keypadMatrix                             0x08000a44   Data          16  keypad.o(.constdata)
     .data                                    0x20000000   Section        9  main.o(.data)
     _ZGVkeypad                               0x20000004   Data           4  main.o(.data)
     i                                        0x20000008   Data           1  main.o(.data)
@@ -706,18 +706,18 @@ Image Symbol Table
     HAL_SYSTICK_Config                       0x080006b5   Thumb Code    52  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
     SysTick_Handler                          0x080006e9   Thumb Code     8  main.o(i.SysTick_Handler)
     SystemInit                               0x080006f1   Thumb Code    24  system_stm32f4xx.o(i.SystemInit)
-    Keypad::IsDebounced(pinStruct_t*)        0x0800070d   Thumb Code    40  keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t)
-    Keypad::GetCharShortPress()              0x08000735   Thumb Code   126  keypad.o(i._ZN6Keypad17GetCharShortPressEv)
-    Keypad::SelectRow(unsigned char)         0x080007b9   Thumb Code    66  keypad.o(i._ZN6Keypad9SelectRowEh)
-    Keypad::Keypad(pinStruct_t*, pinStruct_t*) 0x080007fb   Thumb Code   192  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
-    Keypad::Keypad__sub_object(pinStruct_t*, pinStruct_t*) 0x080007fb   Thumb Code     0  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
-    __cxa_guard_acquire                      0x080008f5   Thumb Code    16  cxa_guard_acquire.o(i.__cxa_guard_acquire)
-    main                                     0x08000905   Thumb Code   204  main.o(i.main)
-    _fp_init                                 0x080009ed   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080009f5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080009f5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08000a48   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000a68   Number         0  anon$$obj.o(Region$$Table)
+    Keypad::IsDebounced(unsigned char)       0x0800070d   Thumb Code    60  keypad.o(i._ZN6Keypad11IsDebouncedEh)
+    Keypad::GetCharShortPress()              0x08000749   Thumb Code   118  keypad.o(i._ZN6Keypad17GetCharShortPressEv)
+    Keypad::SelectRow(unsigned char)         0x080007c5   Thumb Code    66  keypad.o(i._ZN6Keypad9SelectRowEh)
+    Keypad::Keypad(pinStruct_t*, pinStruct_t*) 0x08000807   Thumb Code   192  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
+    Keypad::Keypad__sub_object(pinStruct_t*, pinStruct_t*) 0x08000807   Thumb Code     0  keypad.o(i._ZN6KeypadC1EP11pinStruct_tS1_)
+    __cxa_guard_acquire                      0x08000901   Thumb Code    16  cxa_guard_acquire.o(i.__cxa_guard_acquire)
+    main                                     0x08000911   Thumb Code   204  main.o(i.main)
+    _fp_init                                 0x080009f9   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000a01   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000a01   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08000a54   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000a74   Number         0  anon$$obj.o(Region$$Table)
     pressedKey                               0x20000000   Data           1  main.o(.data)
     uwTick                                   0x2000000c   Data           4  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000010   Data           4  stm32f4xx_hal.o(.data)
@@ -735,9 +735,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000235
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000a84, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000a90, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000a68, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000a74, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -816,34 +816,34 @@ Memory Map of the image
     0x080006b4   0x080006b4   0x00000034   Code   RO          455    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
     0x080006e8   0x080006e8   0x00000008   Code   RO            4    i.SysTick_Handler   main.o
     0x080006f0   0x080006f0   0x0000001c   Code   RO         1011    i.SystemInit        system_stm32f4xx.o
-    0x0800070c   0x0800070c   0x00000028   Code   RO          128    i._ZN6Keypad11IsDebouncedEP11pinStruct_t  keypad.o
-    0x08000734   0x08000734   0x00000084   Code   RO          130    i._ZN6Keypad17GetCharShortPressEv  keypad.o
-    0x080007b8   0x080007b8   0x00000042   Code   RO          131    i._ZN6Keypad9SelectRowEh  keypad.o
-    0x080007fa   0x080007fa   0x000000c0   Code   RO          132    i._ZN6KeypadC1EP11pinStruct_tS1_  keypad.o
-    0x080008ba   0x080008ba   0x00000002   PAD
-    0x080008bc   0x080008bc   0x00000010   Code   RO          457    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x080008cc   0x080008cc   0x00000028   Code   RO          458    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x080008f4   0x080008f4   0x00000010   Code   RO         1054    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
-    0x08000904   0x08000904   0x000000e8   Code   RO            5    i.main              main.o
-    0x080009ec   0x080009ec   0x0000000a   Code   RO         1167    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080009f6   0x080009f6   0x00000002   PAD
-    0x080009f8   0x080009f8   0x00000040   Data   RO            9    .constdata          main.o
-    0x08000a38   0x08000a38   0x00000010   Data   RO          138    .constdata          keypad.o
-    0x08000a48   0x08000a48   0x00000020   Data   RO         1225    Region$$Table       anon$$obj.o
+    0x0800070c   0x0800070c   0x0000003c   Code   RO          128    i._ZN6Keypad11IsDebouncedEh  keypad.o
+    0x08000748   0x08000748   0x0000007c   Code   RO          130    i._ZN6Keypad17GetCharShortPressEv  keypad.o
+    0x080007c4   0x080007c4   0x00000042   Code   RO          131    i._ZN6Keypad9SelectRowEh  keypad.o
+    0x08000806   0x08000806   0x000000c0   Code   RO          132    i._ZN6KeypadC1EP11pinStruct_tS1_  keypad.o
+    0x080008c6   0x080008c6   0x00000002   PAD
+    0x080008c8   0x080008c8   0x00000010   Code   RO          457    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x080008d8   0x080008d8   0x00000028   Code   RO          458    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08000900   0x08000900   0x00000010   Code   RO         1054    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
+    0x08000910   0x08000910   0x000000e8   Code   RO            5    i.main              main.o
+    0x080009f8   0x080009f8   0x0000000a   Code   RO         1167    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08000a02   0x08000a02   0x00000002   PAD
+    0x08000a04   0x08000a04   0x00000040   Data   RO            9    .constdata          main.o
+    0x08000a44   0x08000a44   0x00000010   Data   RO          138    .constdata          keypad.o
+    0x08000a54   0x08000a54   0x00000020   Data   RO         1225    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000a68, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000a74, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000a68   0x00000009   Data   RW           10    .data               main.o
-    0x20000009   0x08000a71   0x00000003   PAD
-    0x2000000c   0x08000a74   0x00000009   Data   RW          205    .data               stm32f4xx_hal.o
-    0x20000015   0x08000a7d   0x00000003   PAD
-    0x20000018   0x08000a80   0x00000004   Data   RW         1013    .data               system_stm32f4xx.o
+    0x20000000   0x08000a74   0x00000009   Data   RW           10    .data               main.o
+    0x20000009   0x08000a7d   0x00000003   PAD
+    0x2000000c   0x08000a80   0x00000009   Data   RW          205    .data               stm32f4xx_hal.o
+    0x20000015   0x08000a89   0x00000003   PAD
+    0x20000018   0x08000a8c   0x00000004   Data   RW         1013    .data               system_stm32f4xx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x2000001c, Load base: 0x08000a84, Size: 0x000006dc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x2000001c, Load base: 0x08000a90, Size: 0x000006dc, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -860,8 +860,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       430          6         16          0          0       3768   keypad.o
-       240         28         64          9        124     316230   main.o
+       442          6         16          0          0       3772   keypad.o
+       240         28         64          9        124     316234   main.o
         64         26        404          0       1536        928   startup_stm32f401xe.o
        202         34          0          9          0     325351   stm32f4xx_hal.o
        272         22          0          0          0      34258   stm32f4xx_hal_cortex.o
@@ -869,7 +869,7 @@ Image component sizes
         28          4          0          4          0       1543   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      1736        152        516         28       1660     685441   Object Totals
+      1748        152        516         28       1660     685449   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          6          0          0   (incl. Padding)
 
@@ -923,15 +923,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2148        168        516         28       1756     684229   Grand Totals
-      2148        168        516         28       1756     684229   ELF Image Totals
-      2148        168        516         28          0          0   ROM Totals
+      2160        168        516         28       1756     684237   Grand Totals
+      2160        168        516         28       1756     684237   ELF Image Totals
+      2160        168        516         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2664 (   2.60kB)
+    Total RO  Size (Code + RO Data)                 2676 (   2.61kB)
     Total RW  Size (RW Data + ZI Data)              1784 (   1.74kB)
-    Total ROM Size (Code + RO Data + RW Data)       2692 (   2.63kB)
+    Total ROM Size (Code + RO Data + RW Data)       2704 (   2.64kB)
 
 ==============================================================================
 

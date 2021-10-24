@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Keypad_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Keypad_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Oct 18 08:33:45 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Oct 24 10:49:11 2021
 <BR><P>
 <H3>Maximum Stack Usage =        280 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -536,7 +536,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(unsigned char)
 </UL>
 
 <P><STRONG><a name="[6f]"></a>HAL_GPIO_Init</STRONG> (Thumb, 436 bytes, Stack size 24 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init))
@@ -546,7 +546,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6a]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(unsigned char)
 </UL>
 
 <P><STRONG><a name="[6d]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
@@ -615,8 +615,8 @@ Global Symbols
 <P><STRONG><a name="[46]"></a>SystemInit</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, system_stm32f4xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
-<P><STRONG><a name="[69]"></a>Keypad::IsDebounced(pinStruct_t*)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad11IsDebouncedEP11pinStruct_t))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Keypad::IsDebounced(pinStruct_t*) &rArr; HAL_Delay
+<P><STRONG><a name="[69]"></a>Keypad::IsDebounced(unsigned char)</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad11IsDebouncedEh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Keypad::IsDebounced(unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -624,11 +624,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::GetCharShortPress()
 </UL>
 
-<P><STRONG><a name="[6b]"></a>Keypad::GetCharShortPress()</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad17GetCharShortPressEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Keypad::GetCharShortPress() &rArr; Keypad::IsDebounced(pinStruct_t*) &rArr; HAL_Delay
+<P><STRONG><a name="[6b]"></a>Keypad::GetCharShortPress()</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, keypad.o(i._ZN6Keypad17GetCharShortPressEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Keypad::GetCharShortPress() &rArr; Keypad::IsDebounced(unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::SelectRow(unsigned char)
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(pinStruct_t*)
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keypad::IsDebounced(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

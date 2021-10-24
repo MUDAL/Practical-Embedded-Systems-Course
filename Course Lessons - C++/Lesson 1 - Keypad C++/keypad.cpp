@@ -22,12 +22,12 @@ void Keypad::SelectRow(uint8_t pinIndex)
 	}
 }
 
-bool Keypad::IsDebounced(pinStruct_t* pColumn)
+bool Keypad::IsDebounced(uint8_t pinIndex)
 {
-	if(HAL_GPIO_ReadPin(pColumn->port,pColumn->selectedPin) == GPIO_PIN_RESET)
+	if(HAL_GPIO_ReadPin(pCol[pinIndex].port,pCol[pinIndex].selectedPin) == GPIO_PIN_RESET)
 	{
 		HAL_Delay(15); //De-bounce delay
-		if(HAL_GPIO_ReadPin(pColumn->port,pColumn->selectedPin) == GPIO_PIN_RESET)
+		if(HAL_GPIO_ReadPin(pCol[pinIndex].port,pCol[pinIndex].selectedPin) == GPIO_PIN_RESET)
 		{
 			return true;
 		}
@@ -72,12 +72,12 @@ char Keypad::GetCharShortPress(void)
 		Keypad::SelectRow(i);
 		for(uint8_t j = 0; j < NUMBER_OF_COLUMNS; j++)
 		{
-			if(Keypad::IsDebounced(&pCol[j]) && !pinPrevPressed[i][j])
+			if(Keypad::IsDebounced(j) && !pinPrevPressed[i][j])
 			{
 				pinPrevPressed[i][j] = true;
 				return keypadMatrix[i][j];
 			}
-			else if(!Keypad::IsDebounced(&pCol[j]) && pinPrevPressed[i][j])
+			else if(!Keypad::IsDebounced(j) && pinPrevPressed[i][j])
 			{
 				pinPrevPressed[i][j] = false;
 			}

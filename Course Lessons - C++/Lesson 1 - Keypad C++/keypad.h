@@ -13,7 +13,7 @@ class Keypad
 		pinStruct_t* pCol;
 		bool pinPrevPressed[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS];
 		void SelectRow(uint8_t pinIndex);
-		bool IsDebounced(pinStruct_t* pCol);
+		bool IsDebounced(uint8_t pinIndex);
 	
 	public:
 		Keypad(pinStruct_t* pRowPins,pinStruct_t* pColumnPins);
