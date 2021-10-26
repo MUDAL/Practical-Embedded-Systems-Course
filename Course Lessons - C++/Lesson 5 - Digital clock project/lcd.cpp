@@ -104,7 +104,7 @@ void LCD::WriteBytes(const char* pData)
 void LCD::WriteInteger(uint32_t data)
 {
 	const uint8_t maxNumberOfDigits = 10;
-	char integerToStringBuffer[maxNumberOfDigits + 1] = {0};
+	char integerToStringBuffer[maxNumberOfDigits] = {0};
 	
 	if(data < 10)
 	{

@@ -889,31 +889,31 @@ Image Symbol Table
     BME280_StoreCompensationParameters(unsigned char*, unsigned char*, bme280CompParam_t*) 0x080012b5   Thumb Code    86  bme280.o(i._Z34BME280_StoreCompensationParametersPhS_P17bme280CompParam_t)
     i._ZN3LCD10WriteBytesEPKc                0x0800130a   Section        0  lcd.o(i._ZN3LCD10WriteBytesEPKc)
     i._ZN3LCD11WriteNibbleEch                0x08001328   Section        0  lcd.o(i._ZN3LCD11WriteNibbleEch)
-    i._ZN3LCD12WriteIntegerEj                0x080013dc   Section        0  lcd.o(i._ZN3LCD12WriteIntegerEj)
-    i._ZN3LCD5PrintEPKc                      0x0800140c   Section        0  lcd.o(i._ZN3LCD5PrintEPKc)
-    i._ZN3LCD5PrintERh                       0x0800141c   Section        0  lcd.o(i._ZN3LCD5PrintERh)
-    i._ZN3LCD5PrintEc                        0x0800142c   Section        0  lcd.o(i._ZN3LCD5PrintEc)
-    i._ZN3LCD9SetCursorEhh                   0x08001440   Section        0  lcd.o(i._ZN3LCD9SetCursorEhh)
-    i._ZN3LCD9WriteByteE13GPIO_PinStatec     0x08001474   Section        0  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
-    i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_ 0x0800149c   Section        0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
-    i._ZN6BME2807GetDataEv                   0x080015b0   Section        0  bme280.o(i._ZN6BME2807GetDataEv)
-    i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_ 0x08001724   Section        0  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    i._ZN6DS32317GetTimeEv                   0x080017d4   Section        0  ds3231.o(i._ZN6DS32317GetTimeEv)
-    i._ZN6DS32317SetTimeEhh                  0x08001850   Section        0  ds3231.o(i._ZN6DS32317SetTimeEhh)
-    i._ZN6DS32319SetFormatEh                 0x080018b8   Section        0  ds3231.o(i._ZN6DS32319SetFormatEh)
-    i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_ 0x0800192c   Section        0  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    i.__NVIC_GetPriorityGrouping             0x08001994   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    __NVIC_GetPriorityGrouping               0x08001995   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    i.__NVIC_SetPriority                     0x080019a4   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x080019a5   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__cxa_guard_acquire                    0x080019cc   Section        0  cxa_guard_acquire.o(i.__cxa_guard_acquire)
-    i.main                                   0x080019dc   Section        0  main.o(i.main)
-    x$fpl$fpinit                             0x08001c6c   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x08001c6c   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x08001c78   Section       64  main.o(.constdata)
-    .constdata                               0x08001cb8   Section       82  lcd.o(.constdata)
-    ddramAddr                                0x08001cb8   Data          80  lcd.o(.constdata)
-    .constdata                               0x08001d0a   Section       24  system_stm32f4xx.o(.constdata)
+    i._ZN3LCD12WriteIntegerEj                0x080013b8   Section        0  lcd.o(i._ZN3LCD12WriteIntegerEj)
+    i._ZN3LCD5PrintEPKc                      0x080013e8   Section        0  lcd.o(i._ZN3LCD5PrintEPKc)
+    i._ZN3LCD5PrintERh                       0x080013f8   Section        0  lcd.o(i._ZN3LCD5PrintERh)
+    i._ZN3LCD5PrintEc                        0x08001408   Section        0  lcd.o(i._ZN3LCD5PrintEc)
+    i._ZN3LCD9SetCursorEhh                   0x0800141c   Section        0  lcd.o(i._ZN3LCD9SetCursorEhh)
+    i._ZN3LCD9WriteByteE13GPIO_PinStatec     0x08001450   Section        0  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
+    i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_ 0x08001478   Section        0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
+    i._ZN6BME2807GetDataEv                   0x0800158c   Section        0  bme280.o(i._ZN6BME2807GetDataEv)
+    i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_ 0x08001700   Section        0  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    i._ZN6DS32317GetTimeEv                   0x080017b0   Section        0  ds3231.o(i._ZN6DS32317GetTimeEv)
+    i._ZN6DS32317SetTimeEhh                  0x0800182c   Section        0  ds3231.o(i._ZN6DS32317SetTimeEhh)
+    i._ZN6DS32319SetFormatEh                 0x08001894   Section        0  ds3231.o(i._ZN6DS32319SetFormatEh)
+    i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_ 0x08001908   Section        0  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    i.__NVIC_GetPriorityGrouping             0x08001970   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x08001971   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x08001980   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x08001981   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__cxa_guard_acquire                    0x080019a8   Section        0  cxa_guard_acquire.o(i.__cxa_guard_acquire)
+    i.main                                   0x080019b8   Section        0  main.o(i.main)
+    x$fpl$fpinit                             0x08001c48   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08001c48   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x08001c54   Section       64  main.o(.constdata)
+    .constdata                               0x08001c94   Section       82  lcd.o(.constdata)
+    ddramAddr                                0x08001c94   Data          80  lcd.o(.constdata)
+    .constdata                               0x08001ce6   Section       24  system_stm32f4xx.o(.constdata)
     .data                                    0x20000000   Section       18  main.o(.data)
     _ZGVlcd                                  0x20000000   Data           4  main.o(.data)
     _ZGVbme280                               0x20000004   Data           4  main.o(.data)
@@ -1129,32 +1129,32 @@ Image Symbol Table
     SysTick_Handler                          0x0800121b   Thumb Code     8  main.o(i.SysTick_Handler)
     SystemInit                               0x08001225   Thumb Code    24  system_stm32f4xx.o(i.SystemInit)
     LCD::WriteBytes(const char*)             0x0800130b   Thumb Code    28  lcd.o(i._ZN3LCD10WriteBytesEPKc)
-    LCD::WriteNibble(char, unsigned char)    0x08001329   Thumb Code   174  lcd.o(i._ZN3LCD11WriteNibbleEch)
-    LCD::WriteInteger(unsigned)              0x080013dd   Thumb Code    48  lcd.o(i._ZN3LCD12WriteIntegerEj)
-    LCD::Print(const char*)                  0x0800140d   Thumb Code    16  lcd.o(i._ZN3LCD5PrintEPKc)
-    LCD::Print(unsigned char&)               0x0800141d   Thumb Code    16  lcd.o(i._ZN3LCD5PrintERh)
-    LCD::Print(char)                         0x0800142d   Thumb Code    18  lcd.o(i._ZN3LCD5PrintEc)
-    LCD::SetCursor(unsigned char, unsigned char) 0x08001441   Thumb Code    46  lcd.o(i._ZN3LCD9SetCursorEhh)
-    LCD::WriteByte(GPIO_PinState, char)      0x08001475   Thumb Code    40  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
-    LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x0800149d   Thumb Code   266  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
-    LCD::LCD__sub_object(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x0800149d   Thumb Code     0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
-    BME280::GetData()                        0x080015b1   Thumb Code   358  bme280.o(i._ZN6BME2807GetDataEv)
-    BME280::BME280(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001725   Thumb Code   158  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    BME280::BME280__sub_object(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001725   Thumb Code     0  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    DS3231::GetTime()                        0x080017d5   Thumb Code   124  ds3231.o(i._ZN6DS32317GetTimeEv)
-    DS3231::SetTime(unsigned char, unsigned char) 0x08001851   Thumb Code   104  ds3231.o(i._ZN6DS32317SetTimeEhh)
-    DS3231::SetFormat(unsigned char)         0x080018b9   Thumb Code   116  ds3231.o(i._ZN6DS32319SetFormatEh)
-    DS3231::DS3231(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x0800192d   Thumb Code   100  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    DS3231::DS3231__sub_object(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x0800192d   Thumb Code     0  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
-    __cxa_guard_acquire                      0x080019cd   Thumb Code    16  cxa_guard_acquire.o(i.__cxa_guard_acquire)
-    main                                     0x080019dd   Thumb Code   560  main.o(i.main)
-    _fp_init                                 0x08001c6d   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08001c75   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08001c75   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    AHBPrescTable                            0x08001d0a   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x08001d1a   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x08001d24   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001d44   Number         0  anon$$obj.o(Region$$Table)
+    LCD::WriteNibble(char, unsigned char)    0x08001329   Thumb Code   138  lcd.o(i._ZN3LCD11WriteNibbleEch)
+    LCD::WriteInteger(unsigned)              0x080013b9   Thumb Code    48  lcd.o(i._ZN3LCD12WriteIntegerEj)
+    LCD::Print(const char*)                  0x080013e9   Thumb Code    16  lcd.o(i._ZN3LCD5PrintEPKc)
+    LCD::Print(unsigned char&)               0x080013f9   Thumb Code    16  lcd.o(i._ZN3LCD5PrintERh)
+    LCD::Print(char)                         0x08001409   Thumb Code    18  lcd.o(i._ZN3LCD5PrintEc)
+    LCD::SetCursor(unsigned char, unsigned char) 0x0800141d   Thumb Code    46  lcd.o(i._ZN3LCD9SetCursorEhh)
+    LCD::WriteByte(GPIO_PinState, char)      0x08001451   Thumb Code    40  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
+    LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x08001479   Thumb Code   266  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
+    LCD::LCD__sub_object(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x08001479   Thumb Code     0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
+    BME280::GetData()                        0x0800158d   Thumb Code   358  bme280.o(i._ZN6BME2807GetDataEv)
+    BME280::BME280(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001701   Thumb Code   158  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    BME280::BME280__sub_object(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001701   Thumb Code     0  bme280.o(i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    DS3231::GetTime()                        0x080017b1   Thumb Code   124  ds3231.o(i._ZN6DS32317GetTimeEv)
+    DS3231::SetTime(unsigned char, unsigned char) 0x0800182d   Thumb Code   104  ds3231.o(i._ZN6DS32317SetTimeEhh)
+    DS3231::SetFormat(unsigned char)         0x08001895   Thumb Code   116  ds3231.o(i._ZN6DS32319SetFormatEh)
+    DS3231::DS3231(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001909   Thumb Code   100  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    DS3231::DS3231__sub_object(I2C_TypeDef*, pinStruct_t&, pinStruct_t&) 0x08001909   Thumb Code     0  ds3231.o(i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_)
+    __cxa_guard_acquire                      0x080019a9   Thumb Code    16  cxa_guard_acquire.o(i.__cxa_guard_acquire)
+    main                                     0x080019b9   Thumb Code   560  main.o(i.main)
+    _fp_init                                 0x08001c49   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08001c51   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08001c51   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x08001ce6   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x08001cf6   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x08001d00   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001d20   Number         0  anon$$obj.o(Region$$Table)
     uwTick                                   0x20000020   Data           4  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000024   Data           4  stm32f4xx_hal.o(.data)
     uwTickFreq                               0x20000028   Data           1  stm32f4xx_hal.o(.data)
@@ -1170,9 +1170,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000235
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00001d74, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00001d50, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001d44, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001d20, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1272,54 +1272,54 @@ Memory Map of the image
     0x080012b4   0x080012b4   0x00000056   Code   RO          198    i._Z34BME280_StoreCompensationParametersPhS_P17bme280CompParam_t  bme280.o
     0x0800130a   0x0800130a   0x0000001c   Code   RO          295    i._ZN3LCD10WriteBytesEPKc  lcd.o
     0x08001326   0x08001326   0x00000002   PAD
-    0x08001328   0x08001328   0x000000b4   Code   RO          296    i._ZN3LCD11WriteNibbleEch  lcd.o
-    0x080013dc   0x080013dc   0x00000030   Code   RO          297    i._ZN3LCD12WriteIntegerEj  lcd.o
-    0x0800140c   0x0800140c   0x00000010   Code   RO          299    i._ZN3LCD5PrintEPKc  lcd.o
-    0x0800141c   0x0800141c   0x00000010   Code   RO          300    i._ZN3LCD5PrintERh  lcd.o
-    0x0800142c   0x0800142c   0x00000012   Code   RO          303    i._ZN3LCD5PrintEc   lcd.o
-    0x0800143e   0x0800143e   0x00000002   PAD
-    0x08001440   0x08001440   0x00000034   Code   RO          304    i._ZN3LCD9SetCursorEhh  lcd.o
-    0x08001474   0x08001474   0x00000028   Code   RO          305    i._ZN3LCD9WriteByteE13GPIO_PinStatec  lcd.o
-    0x0800149c   0x0800149c   0x00000114   Code   RO          306    i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_  lcd.o
-    0x080015b0   0x080015b0   0x00000174   Code   RO          199    i._ZN6BME2807GetDataEv  bme280.o
-    0x08001724   0x08001724   0x000000b0   Code   RO          200    i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_  bme280.o
-    0x080017d4   0x080017d4   0x0000007c   Code   RO          146    i._ZN6DS32317GetTimeEv  ds3231.o
-    0x08001850   0x08001850   0x00000068   Code   RO          147    i._ZN6DS32317SetTimeEhh  ds3231.o
-    0x080018b8   0x080018b8   0x00000074   Code   RO          148    i._ZN6DS32319SetFormatEh  ds3231.o
-    0x0800192c   0x0800192c   0x00000068   Code   RO          149    i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_  ds3231.o
-    0x08001994   0x08001994   0x00000010   Code   RO          683    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x080019a4   0x080019a4   0x00000028   Code   RO          684    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x080019cc   0x080019cc   0x00000010   Code   RO         1929    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
-    0x080019dc   0x080019dc   0x00000290   Code   RO            5    i.main              main.o
-    0x08001c6c   0x08001c6c   0x0000000a   Code   RO         2042    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08001c76   0x08001c76   0x00000002   PAD
-    0x08001c78   0x08001c78   0x00000040   Data   RO            9    .constdata          main.o
-    0x08001cb8   0x08001cb8   0x00000052   Data   RO          320    .constdata          lcd.o
-    0x08001d0a   0x08001d0a   0x00000018   Data   RO         1887    .constdata          system_stm32f4xx.o
-    0x08001d22   0x08001d22   0x00000002   PAD
-    0x08001d24   0x08001d24   0x00000020   Data   RO         2100    Region$$Table       anon$$obj.o
+    0x08001328   0x08001328   0x00000090   Code   RO          296    i._ZN3LCD11WriteNibbleEch  lcd.o
+    0x080013b8   0x080013b8   0x00000030   Code   RO          297    i._ZN3LCD12WriteIntegerEj  lcd.o
+    0x080013e8   0x080013e8   0x00000010   Code   RO          299    i._ZN3LCD5PrintEPKc  lcd.o
+    0x080013f8   0x080013f8   0x00000010   Code   RO          300    i._ZN3LCD5PrintERh  lcd.o
+    0x08001408   0x08001408   0x00000012   Code   RO          303    i._ZN3LCD5PrintEc   lcd.o
+    0x0800141a   0x0800141a   0x00000002   PAD
+    0x0800141c   0x0800141c   0x00000034   Code   RO          304    i._ZN3LCD9SetCursorEhh  lcd.o
+    0x08001450   0x08001450   0x00000028   Code   RO          305    i._ZN3LCD9WriteByteE13GPIO_PinStatec  lcd.o
+    0x08001478   0x08001478   0x00000114   Code   RO          306    i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_  lcd.o
+    0x0800158c   0x0800158c   0x00000174   Code   RO          199    i._ZN6BME2807GetDataEv  bme280.o
+    0x08001700   0x08001700   0x000000b0   Code   RO          200    i._ZN6BME280C1EP11I2C_TypeDefR11pinStruct_tS3_  bme280.o
+    0x080017b0   0x080017b0   0x0000007c   Code   RO          146    i._ZN6DS32317GetTimeEv  ds3231.o
+    0x0800182c   0x0800182c   0x00000068   Code   RO          147    i._ZN6DS32317SetTimeEhh  ds3231.o
+    0x08001894   0x08001894   0x00000074   Code   RO          148    i._ZN6DS32319SetFormatEh  ds3231.o
+    0x08001908   0x08001908   0x00000068   Code   RO          149    i._ZN6DS3231C1EP11I2C_TypeDefR11pinStruct_tS3_  ds3231.o
+    0x08001970   0x08001970   0x00000010   Code   RO          683    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x08001980   0x08001980   0x00000028   Code   RO          684    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080019a8   0x080019a8   0x00000010   Code   RO         1929    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
+    0x080019b8   0x080019b8   0x00000290   Code   RO            5    i.main              main.o
+    0x08001c48   0x08001c48   0x0000000a   Code   RO         2042    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08001c52   0x08001c52   0x00000002   PAD
+    0x08001c54   0x08001c54   0x00000040   Data   RO            9    .constdata          main.o
+    0x08001c94   0x08001c94   0x00000052   Data   RO          320    .constdata          lcd.o
+    0x08001ce6   0x08001ce6   0x00000018   Data   RO         1887    .constdata          system_stm32f4xx.o
+    0x08001cfe   0x08001cfe   0x00000002   PAD
+    0x08001d00   0x08001d00   0x00000020   Data   RO         2100    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08001d44, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08001d20, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001d44   0x00000012   Data   RW           10    .data               main.o
-    0x20000012   0x08001d56   0x00000002   PAD
-    0x20000014   0x08001d58   0x0000000c   Data   RW          205    .data               bme280.o
-    0x20000020   0x08001d64   0x00000009   Data   RW          419    .data               stm32f4xx_hal.o
-    0x20000029   0x08001d6d   0x00000003   PAD
-    0x2000002c   0x08001d70   0x00000004   Data   RW         1888    .data               system_stm32f4xx.o
+    0x20000000   0x08001d20   0x00000012   Data   RW           10    .data               main.o
+    0x20000012   0x08001d32   0x00000002   PAD
+    0x20000014   0x08001d34   0x0000000c   Data   RW          205    .data               bme280.o
+    0x20000020   0x08001d40   0x00000009   Data   RW          419    .data               stm32f4xx_hal.o
+    0x20000029   0x08001d49   0x00000003   PAD
+    0x2000002c   0x08001d4c   0x00000004   Data   RW         1888    .data               system_stm32f4xx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x08001d74, Size: 0x00000778, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x08001d50, Size: 0x00000778, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000030        -       0x000000d8   Zero   RW            8    .bss                main.o
     0x20000108        -       0x0000003c   Zero   RW          204    .bss                bme280.o
     0x20000144        -       0x00000060   Zero   RW         1972    .bss                c_w.l(libspace.o)
-    0x200001a4   0x08001d74   0x00000004   PAD
+    0x200001a4   0x08001d50   0x00000004   PAD
     0x200001a8        -       0x00000200   Zero   RW         1876    HEAP                startup_stm32f401xe.o
     0x200003a8        -       0x00000400   Zero   RW         1875    STACK               startup_stm32f401xe.o
 
@@ -1333,7 +1333,7 @@ Image component sizes
 
        634         32          0         12         60     336660   bme280.o
        496          4          0          0          0       4608   ds3231.o
-       742         22         82          0          0       8044   lcd.o
+       706         22         82          0          0       7976   lcd.o
        664         96         64         18        216     340705   main.o
         64         26        404          0       1536        940   startup_stm32f401xe.o
        202         34          0          9          0     348427   stm32f4xx_hal.o
@@ -1344,7 +1344,7 @@ Image component sizes
         28          4         24          4          0       1579   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      6496        334        608         48       1812    1092530   Object Totals
+      6460        334        608         48       1812    1092462   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         12          0          2          5          0          0   (incl. Padding)
 
@@ -1398,15 +1398,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6884        350        608         48       1912    1088718   Grand Totals
-      6884        350        608         48       1912    1088718   ELF Image Totals
-      6884        350        608         48          0          0   ROM Totals
+      6848        350        608         48       1912    1088650   Grand Totals
+      6848        350        608         48       1912    1088650   ELF Image Totals
+      6848        350        608         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7492 (   7.32kB)
+    Total RO  Size (Code + RO Data)                 7456 (   7.28kB)
     Total RW  Size (RW Data + ZI Data)              1960 (   1.91kB)
-    Total ROM Size (Code + RO Data + RW Data)       7540 (   7.36kB)
+    Total ROM Size (Code + RO Data + RW Data)       7504 (   7.33kB)
 
 ==============================================================================
 
