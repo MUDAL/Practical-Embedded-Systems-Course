@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\TicTacToe_Cpp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\TicTacToe_Cpp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Oct 24 10:54:30 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Oct 26 15:31:59 2021
 <BR><P>
 <H3>Maximum Stack Usage =        408 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -638,7 +638,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
 <P><STRONG><a name="[6c]"></a>Game_Start(LCD&, Keypad&)</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, game.o(i._Z10Game_StartR3LCDR6Keypad))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = Game_Start(LCD&, Keypad&) &rArr; DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = Game_Start(LCD&, Keypad&) &rArr; DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(const char*)
@@ -844,8 +844,8 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Game_Start(LCD&, Keypad&)
 </UL>
 
-<P><STRONG><a name="[70]"></a>DisplayGameBoard(LCD&, char(*)[5])</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, game.o(i._Z16DisplayGameBoardR3LCDPA5_c))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
+<P><STRONG><a name="[70]"></a>DisplayGameBoard(LCD&, char(*)[5])</STRONG> (Thumb, 70 bytes, Stack size 32 bytes, game.o(i._Z16DisplayGameBoardR3LCDPA5_c))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = DisplayGameBoard(LCD&, char(*)[5]) &rArr; LCD::SetCursor(unsigned char, unsigned char) &rArr; LCD::WriteByte(GPIO_PinState, char) &rArr; LCD::WriteNibble(char, unsigned char) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::SetCursor(unsigned char, unsigned char)
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD::Print(char)

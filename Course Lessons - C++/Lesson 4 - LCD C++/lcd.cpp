@@ -183,17 +183,17 @@ void LCD::Print(const char* pData)
 	LCD::WriteBytes(pData);
 }
 
-void LCD::Print(uint8_t& data)
+void LCD::Print(uint8_t data)
 {
 	LCD::WriteInteger(data);
 }
 
-void LCD::Print(uint16_t& data)
+void LCD::Print(uint16_t data)
 {
 	LCD::WriteInteger(data);
 }
 
-void LCD::Print(uint32_t& data)
+void LCD::Print(uint32_t data)
 {
 	LCD::WriteInteger(data);
 }

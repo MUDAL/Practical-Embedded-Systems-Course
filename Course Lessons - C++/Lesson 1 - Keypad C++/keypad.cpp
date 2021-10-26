@@ -37,8 +37,8 @@ bool Keypad::IsDebounced(uint8_t pinIndex)
 
 Keypad::Keypad(pinStruct_t* pRowPins,pinStruct_t* pColumnPins)
 {
-	GPIO_InitTypeDef rowPinInitStruct[NUMBER_OF_ROWS];	
-	GPIO_InitTypeDef columnPinInitStruct[NUMBER_OF_COLUMNS];
+	GPIO_InitTypeDef rowPinInitStruct[NUMBER_OF_ROWS] = {0};	
+	GPIO_InitTypeDef columnPinInitStruct[NUMBER_OF_COLUMNS] = {0};
 	pRow = pRowPins;
 	pCol = pColumnPins;
 	for(uint8_t i = 0; i < NUMBER_OF_ROWS; i++)

@@ -11,9 +11,9 @@ Section Cross References
     main.o(i.main) refers to lcd.o(i._ZN3LCD5PrintEPKc) for LCD::Print(const char*)
     main.o(i.main) refers to stm32f4xx_hal.o(i.HAL_Delay) for HAL_Delay
     main.o(i.main) refers to lcd.o(i._ZN3LCD5ClearEv) for LCD::Clear()
-    main.o(i.main) refers to lcd.o(i._ZN3LCD5PrintERh) for LCD::Print(unsigned char&)
+    main.o(i.main) refers to lcd.o(i._ZN3LCD5PrintEh) for LCD::Print(unsigned char)
     main.o(i.main) refers to lcd.o(i._ZN3LCD9SetCursorEhh) for LCD::SetCursor(unsigned char, unsigned char)
-    main.o(i.main) refers to lcd.o(i._ZN3LCD5PrintERj) for LCD::Print(unsigned&)
+    main.o(i.main) refers to lcd.o(i._ZN3LCD5PrintEj) for LCD::Print(unsigned)
     main.o(i.main) refers to main.o(.constdata) for .constdata
     main.o(i.main) refers to main.o(.data) for _ZGVlcd
     main.o(i.main) refers to main.o(.bss) for lcd
@@ -28,10 +28,10 @@ Section Cross References
     lcd.o(i._ZN3LCD12WriteIntegerEj) refers to lcd.o(i._ZN3LCD10WriteBytesEPKc) for LCD::WriteBytes(const char*)
     lcd.o(i._ZN3LCD5ClearEv) refers to lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec) for LCD::WriteByte(GPIO_PinState, char)
     lcd.o(i._ZN3LCD5PrintEPKc) refers to lcd.o(i._ZN3LCD10WriteBytesEPKc) for LCD::WriteBytes(const char*)
-    lcd.o(i._ZN3LCD5PrintERh) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
-    lcd.o(i._ZN3LCD5PrintERj) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
-    lcd.o(i._ZN3LCD5PrintERt) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
     lcd.o(i._ZN3LCD5PrintEc) refers to lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec) for LCD::WriteByte(GPIO_PinState, char)
+    lcd.o(i._ZN3LCD5PrintEh) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
+    lcd.o(i._ZN3LCD5PrintEj) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
+    lcd.o(i._ZN3LCD5PrintEt) refers to lcd.o(i._ZN3LCD12WriteIntegerEj) for LCD::WriteInteger(unsigned)
     lcd.o(i._ZN3LCD9SetCursorEhh) refers to lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec) for LCD::WriteByte(GPIO_PinState, char)
     lcd.o(i._ZN3LCD9SetCursorEhh) refers to lcd.o(.constdata) for ddramAddr
     lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
@@ -49,9 +49,9 @@ Section Cross References
     lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD9SetCursorEhh) for i._ZN3LCD9SetCursorEhh
     lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintEc) for i._ZN3LCD5PrintEc
     lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintEPKc) for i._ZN3LCD5PrintEPKc
-    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintERh) for i._ZN3LCD5PrintERh
-    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintERt) for i._ZN3LCD5PrintERt
-    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintERj) for i._ZN3LCD5PrintERj
+    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintEh) for i._ZN3LCD5PrintEh
+    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintEt) for i._ZN3LCD5PrintEt
+    lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5PrintEj) for i._ZN3LCD5PrintEj
     lcd.o(.ARM.exidx) refers to lcd.o(i._ZN3LCD5ClearEv) for i._ZN3LCD5ClearEv
     stm32f4xx_hal.o(i.HAL_DeInit) refers to stm32f4xx_hal.o(i.HAL_MspDeInit) for HAL_MspDeInit
     stm32f4xx_hal.o(i.HAL_Delay) refers to stm32f4xx_hal.o(i.HAL_GetTick) for HAL_GetTick
@@ -236,8 +236,8 @@ Removing Unused input sections from the image.
     Removing lcd.o(.rev16_text), (4 bytes).
     Removing lcd.o(.revsh_text), (4 bytes).
     Removing lcd.o(.rrx_text), (6 bytes).
-    Removing lcd.o(i._ZN3LCD5PrintERt), (16 bytes).
     Removing lcd.o(i._ZN3LCD5PrintEc), (18 bytes).
+    Removing lcd.o(i._ZN3LCD5PrintEt), (16 bytes).
     Removing lcd.o(.ARM.exidx), (8 bytes).
     Removing lcd.o(.ARM.exidx), (8 bytes).
     Removing lcd.o(.ARM.exidx), (8 bytes).
@@ -533,8 +533,8 @@ Image Symbol Table
     i._ZN3LCD12WriteIntegerEj                0x080007d4   Section        0  lcd.o(i._ZN3LCD12WriteIntegerEj)
     i._ZN3LCD5ClearEv                        0x08000804   Section        0  lcd.o(i._ZN3LCD5ClearEv)
     i._ZN3LCD5PrintEPKc                      0x08000814   Section        0  lcd.o(i._ZN3LCD5PrintEPKc)
-    i._ZN3LCD5PrintERh                       0x08000824   Section        0  lcd.o(i._ZN3LCD5PrintERh)
-    i._ZN3LCD5PrintERj                       0x08000834   Section        0  lcd.o(i._ZN3LCD5PrintERj)
+    i._ZN3LCD5PrintEh                        0x08000824   Section        0  lcd.o(i._ZN3LCD5PrintEh)
+    i._ZN3LCD5PrintEj                        0x08000834   Section        0  lcd.o(i._ZN3LCD5PrintEj)
     i._ZN3LCD9SetCursorEhh                   0x08000844   Section        0  lcd.o(i._ZN3LCD9SetCursorEhh)
     i._ZN3LCD9WriteByteE13GPIO_PinStatec     0x08000878   Section        0  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
     i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_ 0x080008a0   Section        0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
@@ -544,11 +544,11 @@ Image Symbol Table
     __NVIC_SetPriority                       0x080009c5   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
     i.__cxa_guard_acquire                    0x080009ec   Section        0  cxa_guard_acquire.o(i.__cxa_guard_acquire)
     i.main                                   0x080009fc   Section        0  main.o(i.main)
-    x$fpl$fpinit                             0x08000b2c   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x08000b2c   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x08000b38   Section       48  main.o(.constdata)
-    .constdata                               0x08000b68   Section       82  lcd.o(.constdata)
-    ddramAddr                                0x08000b68   Data          80  lcd.o(.constdata)
+    x$fpl$fpinit                             0x08000b24   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08000b24   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x08000b30   Section       48  main.o(.constdata)
+    .constdata                               0x08000b60   Section       82  lcd.o(.constdata)
+    ddramAddr                                0x08000b60   Data          80  lcd.o(.constdata)
     .data                                    0x20000000   Section        4  main.o(.data)
     _ZGVlcd                                  0x20000000   Data           4  main.o(.data)
     .data                                    0x20000004   Section        9  stm32f4xx_hal.o(.data)
@@ -749,19 +749,19 @@ Image Symbol Table
     LCD::WriteInteger(unsigned)              0x080007d5   Thumb Code    48  lcd.o(i._ZN3LCD12WriteIntegerEj)
     LCD::Clear()                             0x08000805   Thumb Code    16  lcd.o(i._ZN3LCD5ClearEv)
     LCD::Print(const char*)                  0x08000815   Thumb Code    16  lcd.o(i._ZN3LCD5PrintEPKc)
-    LCD::Print(unsigned char&)               0x08000825   Thumb Code    16  lcd.o(i._ZN3LCD5PrintERh)
-    LCD::Print(unsigned&)                    0x08000835   Thumb Code    16  lcd.o(i._ZN3LCD5PrintERj)
+    LCD::Print(unsigned char)                0x08000825   Thumb Code    16  lcd.o(i._ZN3LCD5PrintEh)
+    LCD::Print(unsigned)                     0x08000835   Thumb Code    16  lcd.o(i._ZN3LCD5PrintEj)
     LCD::SetCursor(unsigned char, unsigned char) 0x08000845   Thumb Code    46  lcd.o(i._ZN3LCD9SetCursorEhh)
     LCD::WriteByte(GPIO_PinState, char)      0x08000879   Thumb Code    40  lcd.o(i._ZN3LCD9WriteByteE13GPIO_PinStatec)
     LCD::LCD(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x080008a1   Thumb Code   266  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
     LCD::LCD__sub_object(pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&, pinStruct_t&) 0x080008a1   Thumb Code     0  lcd.o(i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_)
     __cxa_guard_acquire                      0x080009ed   Thumb Code    16  cxa_guard_acquire.o(i.__cxa_guard_acquire)
-    main                                     0x080009fd   Thumb Code   254  main.o(i.main)
-    _fp_init                                 0x08000b2d   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08000b35   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08000b35   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08000bbc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000bdc   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080009fd   Thumb Code   246  main.o(i.main)
+    _fp_init                                 0x08000b25   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000b2d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000b2d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08000bb4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000bd4   Number         0  anon$$obj.o(Region$$Table)
     uwTick                                   0x20000004   Data           4  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000008   Data           4  stm32f4xx_hal.o(.data)
     uwTickFreq                               0x2000000c   Data           1  stm32f4xx_hal.o(.data)
@@ -777,9 +777,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000235
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000bf0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000be8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000bdc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000bd4, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -862,40 +862,40 @@ Memory Map of the image
     0x080007d4   0x080007d4   0x00000030   Code   RO          129    i._ZN3LCD12WriteIntegerEj  lcd.o
     0x08000804   0x08000804   0x00000010   Code   RO          130    i._ZN3LCD5ClearEv   lcd.o
     0x08000814   0x08000814   0x00000010   Code   RO          131    i._ZN3LCD5PrintEPKc  lcd.o
-    0x08000824   0x08000824   0x00000010   Code   RO          132    i._ZN3LCD5PrintERh  lcd.o
-    0x08000834   0x08000834   0x00000010   Code   RO          133    i._ZN3LCD5PrintERj  lcd.o
+    0x08000824   0x08000824   0x00000010   Code   RO          133    i._ZN3LCD5PrintEh   lcd.o
+    0x08000834   0x08000834   0x00000010   Code   RO          134    i._ZN3LCD5PrintEj   lcd.o
     0x08000844   0x08000844   0x00000034   Code   RO          136    i._ZN3LCD9SetCursorEhh  lcd.o
     0x08000878   0x08000878   0x00000028   Code   RO          137    i._ZN3LCD9WriteByteE13GPIO_PinStatec  lcd.o
     0x080008a0   0x080008a0   0x00000114   Code   RO          138    i._ZN3LCDC1ER11pinStruct_tS1_S1_S1_S1_S1_  lcd.o
     0x080009b4   0x080009b4   0x00000010   Code   RO          503    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
     0x080009c4   0x080009c4   0x00000028   Code   RO          504    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
     0x080009ec   0x080009ec   0x00000010   Code   RO         1100    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
-    0x080009fc   0x080009fc   0x00000130   Code   RO            5    i.main              main.o
-    0x08000b2c   0x08000b2c   0x0000000a   Code   RO         1213    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000b36   0x08000b36   0x00000002   PAD
-    0x08000b38   0x08000b38   0x00000030   Data   RO            9    .constdata          main.o
-    0x08000b68   0x08000b68   0x00000052   Data   RO          152    .constdata          lcd.o
-    0x08000bba   0x08000bba   0x00000002   PAD
-    0x08000bbc   0x08000bbc   0x00000020   Data   RO         1271    Region$$Table       anon$$obj.o
+    0x080009fc   0x080009fc   0x00000128   Code   RO            5    i.main              main.o
+    0x08000b24   0x08000b24   0x0000000a   Code   RO         1213    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08000b2e   0x08000b2e   0x00000002   PAD
+    0x08000b30   0x08000b30   0x00000030   Data   RO            9    .constdata          main.o
+    0x08000b60   0x08000b60   0x00000052   Data   RO          152    .constdata          lcd.o
+    0x08000bb2   0x08000bb2   0x00000002   PAD
+    0x08000bb4   0x08000bb4   0x00000020   Data   RO         1271    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000bdc, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000bd4, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000bdc   0x00000004   Data   RW           10    .data               main.o
-    0x20000004   0x08000be0   0x00000009   Data   RW          251    .data               stm32f4xx_hal.o
-    0x2000000d   0x08000be9   0x00000003   PAD
-    0x20000010   0x08000bec   0x00000004   Data   RW         1059    .data               system_stm32f4xx.o
+    0x20000000   0x08000bd4   0x00000004   Data   RW           10    .data               main.o
+    0x20000004   0x08000bd8   0x00000009   Data   RW          251    .data               stm32f4xx_hal.o
+    0x2000000d   0x08000be1   0x00000003   PAD
+    0x20000010   0x08000be4   0x00000004   Data   RW         1059    .data               system_stm32f4xx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000014, Load base: 0x08000bf0, Size: 0x00000694, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000014, Load base: 0x08000be8, Size: 0x00000694, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000014        -       0x00000030   Zero   RW            8    .bss                main.o
     0x20000044        -       0x00000060   Zero   RW         1143    .bss                c_w.l(libspace.o)
-    0x200000a4   0x08000bf0   0x00000004   PAD
+    0x200000a4   0x08000be8   0x00000004   PAD
     0x200000a8        -       0x00000200   Zero   RW         1047    HEAP                startup_stm32f401xe.o
     0x200002a8        -       0x00000400   Zero   RW         1046    STACK               startup_stm32f401xe.o
 
@@ -907,8 +907,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       720         22         82          0          0       8324   lcd.o
-       312         50         48          4         48     316149   main.o
+       720         22         82          0          0       8308   lcd.o
+       304         50         48          4         48     316145   main.o
         64         26        404          0       1536        924   startup_stm32f401xe.o
        202         34          0          9          0     325351   stm32f4xx_hal.o
        272         22          0          0          0      34258   stm32f4xx_hal_cortex.o
@@ -916,7 +916,7 @@ Image component sizes
         28          4          0          4          0       1539   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      2080        190        568         20       1584     689149   Object Totals
+      2072        190        568         20       1584     689129   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          2          3          0          0   (incl. Padding)
 
@@ -970,15 +970,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2468        206        568         20       1684     687337   Grand Totals
-      2468        206        568         20       1684     687337   ELF Image Totals
-      2468        206        568         20          0          0   ROM Totals
+      2460        206        568         20       1684     687317   Grand Totals
+      2460        206        568         20       1684     687317   ELF Image Totals
+      2460        206        568         20          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3036 (   2.96kB)
+    Total RO  Size (Code + RO Data)                 3028 (   2.96kB)
     Total RW  Size (RW Data + ZI Data)              1704 (   1.66kB)
-    Total ROM Size (Code + RO Data + RW Data)       3056 (   2.98kB)
+    Total ROM Size (Code + RO Data + RW Data)       3048 (   2.98kB)
 
 ==============================================================================
 

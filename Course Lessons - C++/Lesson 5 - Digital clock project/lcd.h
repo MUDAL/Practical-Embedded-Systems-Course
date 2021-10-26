@@ -25,9 +25,9 @@ class LCD
 		void SetCursor(uint8_t row,uint8_t column);
 		void Print(char data);
 		void Print(const char* pData);
-		void Print(uint8_t& data);
-		void Print(uint16_t& data);
-		void Print(uint32_t& data);
+		void Print(uint8_t data);
+		void Print(uint16_t data);
+		void Print(uint32_t data);
 		void Clear(void);
 };
 

@@ -32,7 +32,7 @@ int main(void)
 		lcd.SetCursor(0,0);
 		lcd.Print(var);
 		var++;
-		HAL_Delay(1000);
+		HAL_Delay(300);
 	}
 }
 
