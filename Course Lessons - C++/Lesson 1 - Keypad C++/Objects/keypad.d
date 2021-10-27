@@ -1,4 +1,6 @@
 .\objects\keypad.o: keypad.cpp
+.\objects\keypad.o: keypad.h
+.\objects\keypad.o: pinmap.h
 .\objects\keypad.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\keypad.o: .\RTE\Device\STM32F401RETx\stm32f4xx_hal_conf.h
 .\objects\keypad.o: .\RTE\_stm32f401re\RTE_Components.h
@@ -24,5 +26,3 @@
 .\objects\keypad.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h
 .\objects\keypad.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\objects\keypad.o: C:\Users\OLAOLUWA\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
-.\objects\keypad.o: keypad.h
-.\objects\keypad.o: pinmap.h
