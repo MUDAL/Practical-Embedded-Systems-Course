@@ -34,7 +34,7 @@ int main(void)
 		pressedKey = keypad.GetCharShortPress();
 		if(pressedKey != '\0')
 		{
-			arr[i%5] = pressedKey;
+			arr[i%4] = pressedKey;
 			i++;
 		}
 	}
